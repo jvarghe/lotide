@@ -1,4 +1,4 @@
-// CHALLENGE: Implement middle() which will take in an array and return the 
+// CHALLENGE: Implement middle() which will take in an array and return the
 // middle-most element(s) of the given array.
 
 
@@ -10,28 +10,28 @@ let middle = function(array) {
   let middleArray = [];
 
 
-  // If an array has 0, 1, or 2 elements, there is NO possible middle. 
+  // If an array has 0, 1, or 2 elements, there is NO possible middle.
   // Return an empty array.
   if (array.length <= 2) {
-    return middleArray;  
+    return middleArray;
   
-  // If an array size is greater than 2 and has an odd number of elements, find  
+  // If an array size is greater than 2 and has an odd number of elements, find
   // and return the middle element.
   } else if ((array.length > 2) && (array.length % 2 !== 0)) {
 
-    // Calculate the middle element, round it down, and... 
+    // Calculate the middle element, round it down, and...
     let middleElement = Math.floor((array.length / 2));
     // push this element onto `middleArray`.
     middleArray.push(array[middleElement]);
 
-  // If an array size is greater than 2 and has an even number of elements, find 
+  // If an array size is greater than 2 and has an even number of elements, find
   // and return the middle two elements.
   } else if ((array.length > 2) && (array.length % 2 === 0)) {
 
     // One middle element can be found by taking the average of the length of
     // the array...
     let middleElement2 = (array.length / 2);
-    // ... the other can be found one index before it. 
+    // ... the other can be found one index before it.
     let middleElement1 = (middleElement2 - 1);
 
     // Push these elements into `middleArray`.
