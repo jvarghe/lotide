@@ -2,7 +2,7 @@
 // middle-most element(s) of the given array.
 
 
-// This function takes an array, calculates the "middle" element(s) and returns
+// This function takes an array, calculates the middle element(s) and returns
 // an array containing them.
 let middle = function(array) {
 
@@ -19,8 +19,8 @@ let middle = function(array) {
   // and return the middle element.
   } else if ((array.length > 2) && (array.length % 2 !== 0)) {
 
-    // Calculate the middle element, round it up, and... 
-    let middleElement = Math.ceil((array.length / 2));
+    // Calculate the middle element, round it down, and... 
+    let middleElement = Math.floor((array.length / 2));
     // push this element onto `middleArray`.
     middleArray.push(array[middleElement]);
 
@@ -100,6 +100,17 @@ const eqArrays = function(array1, array2) {
 
 
 // TEST CASES
-let result1 = middle([1, 2, 3, 4]);                   // => [2, 3]
-assertArraysEqual(result1, [2, 3]);
+let result1 = middle([]);                                       // => [];
+assertArraysEqual(result1, []);
 
+let result2 = middle(["Supercalifragilisticexpialidocious"]);   // => [];
+assertArraysEqual(result2, []);
+
+let result3 = middle(["Higgs", "Boson"]);                       // => [];
+assertArraysEqual(result3, []);
+
+let result4 = middle([1, 2, 3, 4]);                             // => [2, 3]
+assertArraysEqual(result4, [2, 3]);
+
+let result5 = middle(["Fire", "tang", 3, "zulu", 23.13]);       // => 3
+assertArraysEqual(result5, [3]);
