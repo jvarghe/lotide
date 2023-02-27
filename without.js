@@ -1,15 +1,15 @@
-// CHALLENGE: Implement without() which will return a subset of a given array, 
+// CHALLENGE: Implement without() which will return a subset of a given array,
 // removing unwanted elements.
 
 
 // WITHOUT() FUNCTION
-// 
-// This function takes two array arguments for parameters `source` and 
+//
+// This function takes two array arguments for parameters `source` and
 // `itemsToRemove`. It returns a new array, having stripped all unwanted items
 // from the source array.
 let without = function(source, itemsToRemove) {
 
-  // Create new array to store only those elements from source that are not 
+  // Create new array to store only those elements from source that are not
   // present in the itemsToRemove array.
   let finalArray = [];
 
@@ -24,19 +24,19 @@ let without = function(source, itemsToRemove) {
   } else {
 
     // Iterate over the `source` array, one element at a time...
-    for(let i = 0; (i < source.length); i++) {
+    for (let i = 0; (i < source.length); i++) {
 
       // Re/set the `undesiredItemFound` value to `false` every time the outer
       // loop starts.
       undesiredItemFound = false;
 
       // ...and compare each element to all the elements in `itemsToRemove`.
-      for(let j = 0; (j < itemsToRemove.length); j++) {
+      for (let j = 0; (j < itemsToRemove.length); j++) {
 
 
-        // If the selected `source` element is the same as the selected 
+        // If the selected `source` element is the same as the selected
         // `itemsToRemove` element, then you've found an undesirable element.
-        // It cannot be added to the finalArray. Set `undesiredItemFound` to 
+        // It cannot be added to the finalArray. Set `undesiredItemFound` to
         // `true` and break out of the inner loop.
         if (source[i] === itemsToRemove[j]) {
           undesiredItemFound = true;
@@ -49,21 +49,21 @@ let without = function(source, itemsToRemove) {
       // After comparing a `source` element to all `itemsToRemove` elements,
       // if none of the elements were banned elements, add the `source` element
       // to the `finalArray`.
-      if(undesiredItemFound === false) {
+      if (undesiredItemFound === false) {
         finalArray.push(source[i]);
       }
     }
   }
   
 
-  // After iterating over both arrays, the `finalArray` should be complete. 
+  // After iterating over both arrays, the `finalArray` should be complete.
   return finalArray;
 };
 
 
 
-// ASSERTARRAYSEQUAL() FUNCTION 
-// 
+// ASSERTARRAYSEQUAL() FUNCTION
+//
 // This function calls eqArrays() to determine if two arrays are equal and
 // prints a message to screen.
 const assertArraysEqual = function(array1, array2) {
@@ -118,7 +118,7 @@ const eqArrays = function(array1, array2) {
 
 // TEST CASES
 let result1 = without([1, 2, 3], [1]);                 // => [2, 3]
-assertArraysEqual(result1, [2, 3]);       
+assertArraysEqual(result1, [2, 3]);
 
 let result2 = without(["1", "2", "3"], [1, 2, "3"]);   // => ["1", "2"]
 assertArraysEqual(result2, ["1", "2"]);
@@ -128,6 +128,6 @@ let result3 = without([15, 15, 15], [15, 15, 15]);     // => []
 assertArraysEqual(result3, []);
 
 // Test strings with similar, but not identical casing.
-let result4 = without(["lighthouselabs", "rocks!"], 
-                      ["Lighthouselabs", "rocks!"]);   // => lighthouselabs
-assertArraysEqual(result4, ["lighthouselabs"]);              
+let result4 = without(["lighthouselabs", "rocks!"],
+  ["Lighthouselabs", "rocks!"]);   // => lighthouselabs
+assertArraysEqual(result4, ["lighthouselabs"]);
