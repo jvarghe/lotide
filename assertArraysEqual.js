@@ -1,9 +1,9 @@
-// Challenge: Implement `assertArraysEqual()` which will take in two arrays and 
+// Challenge: Implement `assertArraysEqual()` which will take in two arrays and
 // `console.log` an appropriate message to the console.
 
 
 
-// This function calls eqArrays() to determine if two arrays are equal and 
+// This function calls eqArrays() to determine if two arrays are equal and
 // prints a message to screen.
 const assertArraysEqual = function(array1, array2) {
 
@@ -55,6 +55,6 @@ const eqArrays = function(array1, array2) {
 
 // TEST CASES:
 assertArraysEqual([1, 2, 3], [1, 2, 3]);                // => EQUAL ARRAYS
-assertArraysEqual([1, 2, 3], [3, 2, 1]);                // => NOT EQUAL! 
+assertArraysEqual([1, 2, 3], [3, 2, 1]);                // => NOT EQUAL!
 assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);    // => EQUAL ARRAYS
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);      // => NOT EQUAL! 
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);      // => NOT EQUAL!
