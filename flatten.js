@@ -1,9 +1,9 @@
-// CHALLENGE: Create a function flatten() which will take in an array containing 
-// elements including nested arrays of elements, and return a "flattened" 
+// CHALLENGE: Create a function flatten() which will take in an array containing
+// elements including nested arrays of elements, and return a "flattened"
 // version of the array.
 
 
-// This function takes an array that hold nested array up to one-level deep. 
+// This function takes an array that hold nested array up to one-level deep.
 // It flattens nested arrays by moving elements up into the top array.
 let flatten = function(unflatArray) {
   
@@ -23,7 +23,7 @@ let flatten = function(unflatArray) {
       // it and push its elements on `finalArray`.
       for (const item of element) {
         finalArray.push(item);
-      }  
+      }
     }
   }
 
@@ -31,7 +31,7 @@ let flatten = function(unflatArray) {
   // Print `finalArray` to console.
   console.log(finalArray);
   return finalArray;
-}
+};
 
 
 
@@ -88,7 +88,7 @@ const eqArrays = function(array1, array2) {
 };
 
 // TEST CASES
-const unflattenedArray1 = flatten([1, 2, [3, 4], 5, [6]]) // => [1, 2, 3, 4, 5, 6]
+const unflattenedArray1 = flatten([1, 2, [3, 4], 5, [6]]); // => [1, 2, 3, 4, 5, 6]
 assertArraysEqual(unflattenedArray1, [1, 2, 3, 4, 5, 6]);
 
 const unflattenedArray2 = flatten([["Jack", "and", "Jill"], "went", "up", ["the"], "hill"]);
