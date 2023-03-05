@@ -44,9 +44,49 @@ const assertEqual = function(actual, expected) {
 
 
 // COUNTONLY() FUNCTION:
-// `countOnly()` will take an array and an object. It will search for all the
-// strings found in the array and return an object containing counts of all the 
-// strings with a truthy value. 
+// `countOnly()` will take an array and an object. `allItems` will contain a 
+// list of items to search through. itemsToCount is an object specifying which
+// items we need to count. `countOnly()` will search for all the strings found 
+// in the array and return an object containing counts of all the strings with 
+// a truthy value. 
 const countOnly = function(allItems, itemsToCount) {
+  
+  // Create an object to hold the final results.
+  const resultObject = {};
 
+
+
+  return resultObject;
 }
+
+
+// CALLING countOnly():
+
+// An array containing first names.
+const firstNames = [
+  "Karl",
+  "Salima",
+  "Agouhanna",
+  "Fang",
+  "Kavith",
+  "Jason",
+  "Salima",
+  "Fang",
+  "Joe"
+];
+
+
+// A the result of a call to countOnly(), passing in an object.
+const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+
+
+
+// TEST CASES:
+assertEqual(result1["Jason"], 1);
+assertEqual(result1["Karima"], undefined);
+assertEqual(result1["Fang"], 2);
+assertEqual(result1["Agouhanna"], undefined);
+
+
+
+
