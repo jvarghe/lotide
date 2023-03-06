@@ -30,7 +30,7 @@ const countLetters = function(sentenceString) {
 
       // Check if the character has already been added to `sentenceCountObject`.
       // If so, increment the the value of the property by 1.
-      if (sentenceCountObject.hasOwnProperty(char) === true) {
+      if (Object.prototype.hasOwnProperty.call(sentenceCountObject, char) === true) {
 
         sentenceCountObject[char]++;
 
