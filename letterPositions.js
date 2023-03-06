@@ -1,10 +1,10 @@
-/* CHALLENGE: Implement a function called `letterPositions()`. This challenge 
- * is similar to the `countLetters.js` activity and allows us to spend some 
- * more time solving problems with objects. 
- * 
+/* CHALLENGE: Implement a function called `letterPositions()`. This challenge
+ * is similar to the `countLetters.js` activity and allows us to spend some
+ * more time solving problems with objects.
+ *
  * We'll implement a new function `letterPositions()` which will return all the
  * indices (zero-based positions) in the string where each character is found.
- * 
+ *
  * For each letter, instead of returning just one number to represent its number
  * of occurrences, multiple numbers may be needed to represent all the places
  * in the string that it shows up.
@@ -68,7 +68,7 @@ const eqArrays = function(array1, array2) {
 // This function takes a `sentence` string. It reads this string and it will
 // make a list of all the indices in the string where each character is found.
 // As each letter may appear more than once, you will need to return multiple
-// numbers per character. This function will return object with arrays for 
+// numbers per character. This function will return object with arrays for
 // keys.
 const letterPositions = function(sentence) {
   
@@ -76,36 +76,36 @@ const letterPositions = function(sentence) {
   const resultObject = {};
 
   
-    // Iterate over the `sentence` string...
-    for (let char = 0; char < sentence.length; char++) {
-    
-      // If the current character is a space, comma or fullstop, skip over it 
-      // and move on to the next element.
-      if ((sentence[char] === " ") || (sentence[char] === ",") || 
-          (sentence[char] === ".")) {
-        continue; 
+  // Iterate over the `sentence` string...
+  for (let char = 0; char < sentence.length; char++) {
   
-      // If it is an alphanumerical character, prepare to add it to
-      // `sentenceCountObject`.
+    // If the current character is a space, comma or fullstop, skip over it
+    // and move on to the next element.
+    if ((sentence[char] === " ") || (sentence[char] === ",") ||
+        (sentence[char] === ".")) {
+      continue;
+
+    // If it is an alphanumerical character, prepare to add it to
+    // `sentenceCountObject`.
+    } else {
+
+      // Check if the character has already been added to `resultObject`.
+      if (Object.prototype.hasOwnProperty.call(resultObject, sentence[char]) === true) {
+
+        // If so, append the position of the current element to the correct
+        // key array.
+        resultObject[sentence[char]].push(char);
+
+      // If the character does not exist in the `resultObject` object, create
+      // the key and add the current index to it.
       } else {
-
-        // Check if the character has already been added to `resultObject`.
-        if (resultObject.hasOwnProperty(sentence[char]) === true) {
-
-          // If so, append the position of the current element to the correct 
-          // key array. 
-          resultObject[sentence[char]].push(char);
-
-        // If the character does not exist in the `resultObject` object, create
-        // the key and add the current index to it. 
-        } else {
-          resultObject[sentence[char]] = [];
-          resultObject[sentence[char]].push(char);
-        }
-
+        resultObject[sentence[char]] = [];
+        resultObject[sentence[char]].push(char);
       }
 
     }
+
+  }
 
   console.log(resultObject);
   return resultObject;
