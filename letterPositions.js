@@ -87,7 +87,23 @@ const letterPositions = function(sentence) {
   
       // If it is an alphanumerical character, prepare to add it to
       // `sentenceCountObject`.
-      } 
+      } else {
+
+        // Check if the character has already been added to `resultObject`.
+        if (resultObject.hasOwnProperty(char) === true) {
+
+          // If so, append the position of the current element to the correct 
+          // key array. 
+          resultObject[char].push(char);
+
+        // If the character does not exist in the `resultObject` object, create
+        // the key and add the current index to it. 
+        } else {
+          resultObject[sentence[char]] = [];
+          resultObject[sentence[char]].push(char);
+        }
+
+      }
 
     }
 
