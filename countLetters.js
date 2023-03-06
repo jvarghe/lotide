@@ -13,9 +13,31 @@
 // count of all the letters, and only the letters, in that string. 
 const countLetters = function(sentenceString) {
 
-  let sentenceLengthCount = 0;
+  let sentenceCountObject = {};
 
-  return sentenceLengthCount;
+  // Iterate over the `sentenceString` string...
+  for (const char of sentenceString) {
+    
+    // If the current character is a space, comma or fullstop, skip over it and
+    // move on to the next element.
+    if ((char === " " ) || (char === ",") || (char === ",")) {
+      continue;
+
+    // If it is an alphanumerical character, prepare to add it to 
+    // `sentenceCountObject`. 
+    } else {
+
+      // If 
+      // if (sentenceCountObject.hasOwnProperty(char) === true) {
+
+      //   sentenceCountObject[char]++;
+      // }
+
+    }
+  }
+
+  
+  return sentenceCountObject;
 }
 
 
@@ -28,3 +50,9 @@ const assertEqual = function(actual, expected) {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
+
+
+
+// TEST CASES: 
+let resultObject1 = countLetters(" ,.");
+console.log(resultObject1);
