@@ -90,11 +90,11 @@ const letterPositions = function(sentence) {
       } else {
 
         // Check if the character has already been added to `resultObject`.
-        if (resultObject.hasOwnProperty(char) === true) {
+        if (resultObject.hasOwnProperty(sentence[char]) === true) {
 
           // If so, append the position of the current element to the correct 
           // key array. 
-          resultObject[char].push(char);
+          resultObject[sentence[char]].push(char);
 
         // If the character does not exist in the `resultObject` object, create
         // the key and add the current index to it. 
@@ -107,15 +107,15 @@ const letterPositions = function(sentence) {
 
     }
 
-
+  console.log(resultObject);
   return resultObject;
 };
 
 
 
-// TEST CASES: 
+// TEST CASES:
 // Test cases for the word "hello":
-assertArraysEqual(letterPositions("hello").h, [1]);
+assertArraysEqual(letterPositions("hello").h, [0]);
 assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions("hello").l, [2]);
-assertArraysEqual(letterPositions("hello").o, [1]);
+assertArraysEqual(letterPositions("hello").l, [2, 3]);
+assertArraysEqual(letterPositions("hello").o, [4]);
