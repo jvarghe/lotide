@@ -52,12 +52,12 @@ const countOnly = function(allItems, itemsToCount) {
     //     1. It is a key in the `itemsToCount` object.
     //     2. key's value in the `itemsToCount` object is `true`.
     // If both these things are true, that means the element should be counted.
-    if ((itemsToCount.hasOwnProperty(allItems[i]) === true) &&
+    if ((Object.prototype.hasOwnProperty.call(itemsToCount, allItems[i]) === true) &&
         (itemsToCount[allItems[i]] === true)) {
 
       // Check if the `resultObject` object already has a key of the same name.
       // If so, increment the key value by 1.
-      if (resultObject.hasOwnProperty(allItems[i]) === true) {
+      if (Object.prototype.hasOwnProperty.call(resultObject, allItems[i]) === true) {
         resultObject[allItems[i]] += 1;
       
       // If it doesn't exist, add the key and set its value equal to 1.
