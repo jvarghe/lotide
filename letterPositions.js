@@ -12,13 +12,20 @@
 
 
 
-// ASSERTEQUAL() Function Implementation
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+// ASSERTARRAYSEQUAL() Function Implementation
+// This function calls eqArrays() to determine if two arrays are equal and
+// prints a message to screen.
+const assertArraysEqual = function(array1, array2) {
+
+  // Call eqArrays() to determine if the arrays are equal.
+  let arraysEqualOrNot = eqArrays(array1, array2);
+
+  if (arraysEqualOrNot === true) {
+    console.log("✅✅✅ Assertion Passed: The two arrays are equal!");
   } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+    console.log("🛑🛑🛑 Assertion Failed: The two arrays are NOT equal!");
   }
+
 };
 
 
@@ -69,7 +76,23 @@ const letterPositions = function(sentence) {
   const resultObject = {};
 
   
-  return resultsObject;
+    // Iterate over the `sentence` string...
+    for (let char = 0; char < sentence.length; char++) {
+    
+      // If the current character is a space, comma or fullstop, skip over it 
+      // and move on to the next element.
+      if ((sentence[char] === " ") || (sentence[char] === ",") || 
+          (sentence[char] === ".")) {
+        continue; 
+  
+      // If it is an alphanumerical character, prepare to add it to
+      // `sentenceCountObject`.
+      } 
+
+    }
+
+
+  return resultObject;
 };
 
 
