@@ -15,28 +15,36 @@ const countLetters = function(sentenceString) {
 
   let sentenceCountObject = {};
 
+  
   // Iterate over the `sentenceString` string...
   for (const char of sentenceString) {
     
     // If the current character is a space, comma or fullstop, skip over it and
     // move on to the next element.
-    if ((char === " " ) || (char === ",") || (char === ",")) {
+    if ((char === " " ) || (char === ",") || (char === ".")) {
       continue;
 
     // If it is an alphanumerical character, prepare to add it to 
     // `sentenceCountObject`. 
     } else {
 
-      // If 
-      // if (sentenceCountObject.hasOwnProperty(char) === true) {
+      // Check if the character has already been added to `sentenceCountObject`.
+      // If so, increment the the value of the property by 1. 
+      if (sentenceCountObject.hasOwnProperty(char) === true) {
 
-      //   sentenceCountObject[char]++;
-      // }
+        sentenceCountObject[char]++;
+
+      // If the character does not exist as a property of `sentenceCountObject`,
+      // add it and set its value to 1. 
+      } else {
+        sentenceCountObject[char] = 1;
+      }
 
     }
+
   }
 
-  
+
   return sentenceCountObject;
 }
 
@@ -54,5 +62,5 @@ const assertEqual = function(actual, expected) {
 
 
 // TEST CASES: 
-let resultObject1 = countLetters(" ,.");
+let resultObject1 = countLetters("The greatest glory in living lies not in never falling, but in rising every time we fall.");
 console.log(resultObject1);
