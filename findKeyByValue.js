@@ -4,6 +4,10 @@
  * value. It should scan the object and return the first key which contains
  * the given value. If no key with that given value is found, then it should
  * return `undefined`.
+ * 
+ * Tips: Consider using the `Object.keys()` function to help you easily search 
+ * through all the object keys. Consider using `for...of` to loop over the keys 
+ * returned by `Object.keys()`.
  */
 
 
