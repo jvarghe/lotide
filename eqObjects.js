@@ -14,7 +14,9 @@
  * object key iteration again. Fun times!
  * 
  * Implement the definition for function `eqObjects()` which will take in two 
- * objects and returns `true` or `false`, based on a perfect match.
+ * objects and returns `true` or `false`, based on a perfect match. Ensure that
+ * eqObjects() can check for keys which are arrays. However, if keys are 
+ * objects, leave that for a future exercise.
  */
 
 
@@ -94,8 +96,31 @@ const eqObjects = function(object1, object2) {
       // ... check if `object2` has a key listed in `object1`. 
       if (Object.hasOwnProperty.call(object2, key)) {
         
-        // If so, check if the two values match. If they do, set 
-        // `areObjectsEqual` to `true`, and move on to the next key.
+        // CHECK 1: IF A KEY IS AN ARRAY
+        // Check if `key` in `object1` is an array. If so...
+        if (Array.isArray(object1[key]) === true) {
+
+          // ...Call `eqArrays()` to check if the two arrays are equal.
+          if(eqArrays(object1[key], object2[key]) === true) {
+
+            // If they are equal, set `areObjectsEqual` to `true`, and move on 
+            // to the next key.
+            areObjectsEqual = true;
+            continue;
+
+          // If the two arrays aren't equal, this means the two objects are
+          // NOT equal. Set `areObjectsEqual` to `false`, return this value and
+          // exit the function.
+          } else {
+            return areObjectsEqual = false;
+          }
+        }
+
+
+        // CHECK 2: IF A KEY IS A PRIMITIVE
+        // Check if the `key` property in `object1` has the same value as the 
+        // the `key` property in `object2`. If they do, set `areObjectsEqual` 
+        // to `true`, and move on to the next key.
         if (object1[key] === object2[key]) {
           areObjectsEqual = true;
           continue; 
@@ -123,7 +148,7 @@ const anotherShirtObject = { size: "medium", color: "red" };
 // Returns `True`.
 assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
 
-// Compare two objects with different lengths: 
+// Compare two objects with different lengths (Basically two different objects): 
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
 // Returns `False`.
 assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
@@ -135,7 +160,7 @@ const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] }
 // Returns `True`.
 assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
 
-// Compare objects with array keys of different lengths:
+// Compare objects with array keys of different lengths (Basically two different objects):
 const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 // Returns `False`.
 assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
