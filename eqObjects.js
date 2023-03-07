@@ -19,8 +19,52 @@
 
 
 
+// EQARRAYS() FUNCTION
+// This function takes in two arrays and compares their elements. Based on
+// whether the contents are identical, the function returns either true or
+// false.
+const eqArrays = function(array1, array2) {
+
+  let elementEquality = true;
+
+  // Check if the two arrays are of equal size, else return false.
+  if (array1.length !== array2.length) {
+    return false;
+  } else {
+    // If they are of the same size, compare elements to see if they're the
+    // same. Return false if this is not true.
+    for (let i = 0; i < array1.length; i++) {
+
+      // If element i of array1 is equal to element i of array2, return true.
+      // Otherwise, mark elementEquality as false.
+      if (array1[i] === array2[i]) {
+        elementEquality = true;
+      } else {
+        elementEquality = false;
+        break;
+      }
+    }
 
 
+    return elementEquality;
+  }
+
+};
+
+
+
+// ASSERTEQUAL() Function Implementation
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
+
+
+
+// EQOBJECTS() FUNCTION
 // This function takes two objects and compares all their keys to see if they
 // are equal. Based on the result, it returns a boolean value.
 const eqObjects = function(object1, object2) {
@@ -71,21 +115,27 @@ const eqObjects = function(object1, object2) {
 };
 
 
-// ASSERTEQUAL() Function Implementation
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 
 // TEST CASES
+// Compare two identical objects:
 const shirtObject = { color: "red", size: "medium"};
 const anotherShirtObject = { size: "medium", color: "red" };
-assertEqual(eqObjects(shirtObject, anotherShirtObject), true);        // => Returns `True`.
+// Returns `True`.
+assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
 
-
+// Compare two objects with different lengths: 
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);    // => Returns `False`.
+// Returns `False`.
+assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
+
+
+// Compare objects with array keys:
+const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
+const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
+// Returns `True`.
+assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
+
+// Compare objects with array keys of different lengths:
+const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
+// Returns `False`.
+assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
