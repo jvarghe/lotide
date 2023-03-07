@@ -1,9 +1,9 @@
 /* CHALLENGES
- * 
- * As a continuation of the previous exercise, it's time to create our 
- * `assertObjectsEqual()` function which will help us easily test functions 
- * that return objects. Assuming that you've already completed the previous 
- * exercise of implementing `eqObjects`, most of the leg work required to 
+ *
+ * As a continuation of the previous exercise, it's time to create our
+ * `assertObjectsEqual()` function which will help us easily test functions
+ * that return objects. Assuming that you've already completed the previous
+ * exercise of implementing `eqObjects`, most of the leg work required to
  * implement the assertion function is already done.
  */
 
@@ -70,8 +70,8 @@ const eqObjects = function(object1, object2) {
     for (const key in object1) {
 
       // ... check if `object2` has a key listed in `object1`. If so, the two
-      // keys must be compared. But a key could be a primitive, an array or 
-      // an object (including functions). We will ignore most objects in this 
+      // keys must be compared. But a key could be a primitive, an array or
+      // an object (including functions). We will ignore most objects in this
       // project, but we must compare keys if they are primitives or arrays.
       if (Object.hasOwnProperty.call(object2, key)) {
         
@@ -121,7 +121,7 @@ const eqObjects = function(object1, object2) {
 
 
 // ASSERTOBJECTSEQUAL() FUNCTION
-// This function takes in two objects and compares their members to determine 
+// This function takes in two objects and compares their members to determine
 // if they are identical. It will return a boolean explaining the result.
 const assertObjectsEqual = function(object1, object2) {
 
@@ -131,7 +131,7 @@ const assertObjectsEqual = function(object1, object2) {
   // Call eqObjects() to determine if the objects are equal.
   let objectsEqualOrNot = eqObjects(object1, object2);
   
-  // Check the status of `eqObjects`: 
+  // Check the status of `eqObjects`:
   if (objectsEqualOrNot === true) {
     console.log(`✅✅✅ Assertion Passed: ${inspect(object1)} ===  ${inspect(object2)}`);
   } else {
@@ -145,11 +145,11 @@ const assertObjectsEqual = function(object1, object2) {
 // Compare two identical objects:
 const shirtObject = { color: "red", size: "medium"};
 const anotherShirtObject = { size: "medium", color: "red" };
-// Should return `true`. 
+// Should return `true`.
 assertObjectsEqual(shirtObject, anotherShirtObject);
 
-// Compare two different objects: 
+// Compare two different objects:
 const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
 const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
-// Should return `false`. 
+// Should return `false`.
 assertObjectsEqual(multiColorShirtObject, longSleeveMultiColorShirtObject);
