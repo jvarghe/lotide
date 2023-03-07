@@ -24,7 +24,11 @@
 // This function takes two objects and compares all their keys to see if they
 // are equal. Based on the result, it returns a boolean value.
 const eqObjects = function(object1, object2) {
+
+  // Create `areObjectsEqual`. Don't set a value; the value will must be 
+  // determined by the results of comparison.
   let areObjectsEqual;
+
 
   // Compare the length of the objects, which will quickly tell us if the two
   // objects have the same number of keys. As objects don't have a .`length` 
@@ -35,8 +39,34 @@ const eqObjects = function(object1, object2) {
 
   if (object1Array.length !== object2Array.length) {
     return areObjectsEqual = false;
+
+  // If the objects have the same number of keys, move to the next step: compare
+  // the values of the keys to see if they are the same
+  } else {
+
+    // Iterate over the keys in `object1`...
+    for (const key in object1) {
+
+      // ... check if `object2` has a key listed in `object1`. 
+      if (Object.hasOwnProperty.call(object2, key)) {
+        
+        // If so, check if the two values match. If they do, set 
+        // `areObjectsEqual` to `true`, and move on to the next key.
+        if (object1[key] === object2[key]) {
+          areObjectsEqual = true;
+          continue; 
+
+        // If the key values don't match, this means the two objects are
+        // NOT equal. Set `areObjectsEqual` to `false`, return this value and
+        // exit the function.
+        } else {
+          return areObjectsEqual = false;
+        }
+      }
+    }
   }
 
+  console.log(areObjectsEqual);
   return areObjectsEqual;
 };
 
