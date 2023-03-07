@@ -26,8 +26,15 @@
 const eqObjects = function(object1, object2) {
   let areObjectsEqual;
 
-  if () {
-    
+  // Compare the length of the objects, which will quickly tell us if the two
+  // objects have the same number of keys. As objects don't have a .`length` 
+  // property, convert them into arrays. This will result in an array of their 
+  // keys being created. Compare the lengths of the two arrays:
+  const object1Array = Object.keys(object1);
+  const object2Array = Object.keys(object2);
+
+  if (object1Array.length !== object2Array.length) {
+    return areObjectsEqual = false;
   }
 
   return areObjectsEqual;
