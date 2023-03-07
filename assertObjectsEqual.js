@@ -125,14 +125,17 @@ const eqObjects = function(object1, object2) {
 // if they are identical. It will return a boolean explaining the result.
 const assertObjectsEqual = function(object1, object2) {
 
+  // Add the `Util` library to the function, so we can use one of its functions.
+  const inspect = require('util').inspect;
+
   // Call eqObjects() to determine if the objects are equal.
   let objectsEqualOrNot = eqObjects(object1, object2);
   
   // Check the status of `eqObjects`: 
   if (objectsEqualOrNot === true) {
-    console.log("✅✅✅ Assertion Passed: The two objects are equal!");
+    console.log(`✅✅✅ Assertion Passed: ${inspect(object1)} ===  ${inspect(object2)}`);
   } else {
-    console.log("🛑🛑🛑 Assertion Failed: The two objects are NOT equal!");
+    console.log(`🛑🛑🛑 Assertion Failed: ${inspect(object1)} !==  ${inspect(object2)}`);
   }
 };
 
