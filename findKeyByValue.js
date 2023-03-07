@@ -19,11 +19,27 @@ const assertEqual = function(actual, expected) {
 
 
 // This function takes in an object and a value. It will search the object's
-// keys's values for this value. If finds a value, it simply returns the name
+// keys' values for this value. If finds a value, it simply returns the name
 // of the first key where it finds this value. If it does not, it returns 
 // undefined.
 const findKeyByValue = function(objectToScan, valueToScanFor) {
 
+  // Create an variable to hold the first found key value:
+  let keyName = undefined;
+
+  // Iterate over the object...
+  for (const key in objectToScan) {
+
+    // ...Check whether any of `objectToScan`'s key matches the string in 
+    // `valueToScanFor`. 
+    if (objectToScan[key] === valueToScanFor) {
+      // If so, store the value in `keyName` and break out the loop.
+      keyName = key; 
+      break;
+    }
+  }
+
+  return keyName;
 };
 
 
