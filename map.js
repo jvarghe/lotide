@@ -16,15 +16,25 @@
 // An array of strings: 
 const words = ["ground", "control", "to", "major", "tom"];
 
+
 // Our implementation of `map`. 
-const map = function() {
+const map = function(array, callback) {
 
   // An array to hold the results.
   const results = [];
 
+  // Iterate over the input array...
+  for (let item of array) {
+
+    // ... Call the callback function, perform this operation on each element,
+    // and push each result on the `results` array.
+    results.push(callback(item));
+  }
   
+
   return results;
 }
+
 
 // Call `map` and store the results in `results`. 
 const results = map(words, word => word[0]);
