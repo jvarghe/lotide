@@ -1,20 +1,20 @@
-/* CHALLENGE: 
+/* CHALLENGE:
  *
  * Now let's create our own version of `Array.prototype.map()` in order to get
  * some practice building our own higher-order functions.
- * 
+ *
  * Our map function will take in two arguments:
- * 
+ *
  *   - An array to map
  *   - A callback function
- * 
- * The `map()` function will return a new array based on the results of the 
+ *
+ * The `map()` function will return a new array based on the results of the
  * callback function.
  */
 
 
 
-// ASSERTARRAYSEQUAL() 
+// ASSERTARRAYSEQUAL()
 const assertArraysEqual = function(array1, array2) {
 
   // Call eqArrays() to determine if the arrays are equal.
@@ -62,10 +62,10 @@ const eqArrays = function(array1, array2) {
 
 
 // MAP IMPLEMENTATION
-// An array of strings: 
+// An array of strings:
 const words = ["ground", "control", "to", "major", "tom"];
 
-// Our implementation of `map`. 
+// Our implementation of `map`.
 const map = function(array, callback) {
 
   // An array to hold the results.
@@ -81,14 +81,14 @@ const map = function(array, callback) {
   
 
   return results;
-}
+};
 
 
 
 // TEST CASES
-// Write test cases using at least three different ways of using `map`. There 
-// are at least 4 ways of invoking `map`: 
-// 
+// Write test cases using at least three different ways of using `map`. There
+// are at least 4 ways of invoking `map`:
+//
 //   1. Non-Anonymous + Regular Function
 //   2. Non-Anonymous + Arrow Function
 //   3. Anonymous + Regular Function
@@ -103,17 +103,19 @@ assertArraysEqual(results1, ["g", "c", "t", "m", "t"]);
 
 
 // Test 2: Call `map` with a Non-Anonymous + Arrow Function and store the results in `results2`.
-const results2 = map(words, function nonAnonymousArrowFunction (word) { return word[0]; });
+const results2 = map(words, function nonAnonymousArrowFunction(word) {
+  return word[0];
+});
 assertArraysEqual(results2, ["g", "c", "t", "m", "t"]);
 
 
 // Test 3: Call `map` with an Anonymous + Regular Function and store the results in `results3`.
 const results3 = map(words, function(word) {
-  return word[0]
+  return word[0];
 });
-assertArraysEqual(results3, ["g", "c", "t", "m", "t"]); 
+assertArraysEqual(results3, ["g", "c", "t", "m", "t"]);
 
 
-// Test 4: Call `map` with an Anonymous + Arrow Function and store the results in `results4`. 
+// Test 4: Call `map` with an Anonymous + Arrow Function and store the results in `results4`.
 const results4 = map(words, word => word[0]);
-assertArraysEqual(results4, ["g", "c", "t", "m", "t"]); 
+assertArraysEqual(results4, ["g", "c", "t", "m", "t"]);
