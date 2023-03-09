@@ -71,19 +71,49 @@ const eqArrays = function(array1, array2) {
 };
 
 
+
 // TAKEUNTIL() 
 // This function takes an array and a callback function. It will iterate over 
 // the array, applying the callback until the predicate (aka callback function)
 // returns a truthy value. Then it will return an array containing the values 
 // all the values until the predicate terminates the process. 
 const takeUntil = function(array, callback) {
+  
+  // Create an array to hold results.
+  let resultArray = [];
 
+  // Iterate over the array... 
+  for (const element of array) {
+
+    // ... call the callback function and pass in elements of the array. Keep
+    // doing that until the predicate returns a truthy value. 
+    if(callback(element) !== true) {
+
+      // If the predicate function returns a falsy value, push the element 
+      // on to the resultArray.
+      resultArray.push(element);
+
+    // When the callback function returns a truthy value, stop iterating over
+    // the array and break out the for-loop.
+    } else {
+      break;
+    }
+
+  }
+
+
+  return resultArray;
 };
 
 
 
 // TEST CASES: 
+
+// Test 1: 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
 console.log(results1);
 assertArraysEqual(results1, [1, 2, 5, 7, 2]);
+
+
+
