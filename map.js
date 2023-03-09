@@ -13,6 +13,7 @@
  */
 
 
+
 // ASSERTARRAYSEQUAL() 
 const assertArraysEqual = function(array1, array2) {
 
@@ -26,7 +27,6 @@ const assertArraysEqual = function(array1, array2) {
   }
 
 };
-
 
 
 
@@ -61,6 +61,7 @@ const eqArrays = function(array1, array2) {
 
 
 
+// MAP IMPLEMENTATION
 // An array of strings: 
 const words = ["ground", "control", "to", "major", "tom"];
 
@@ -83,8 +84,36 @@ const map = function(array, callback) {
 }
 
 
-// Call `map` and store the results in `results`. 
-const results = map(words, word => word[0]);
-console.log(results);
-// Test 1 
-assertArraysEqual(results, ["g", "c", "t", "m", "t"]); 
+
+// TEST CASES
+// Write test cases using at least three different ways of using `map`. There 
+// are at least 4 ways of invoking `map`: 
+// 
+//   1. Non-Anonymous + Regular Function
+//   2. Non-Anonymous + Arrow Function
+//   3. Anonymous + Regular Function
+//   4. Anonymous + Arrow Function
+
+
+// Test 1: Call `map` with a Non-Anonymous + Regular Function and store the results in `results1`.
+const results1 = map(words, function nonAnonymousRegularFunction(word) {
+  return word[0];
+});
+assertArraysEqual(results1, ["g", "c", "t", "m", "t"]);
+
+
+// Test 2: Call `map` with a Non-Anonymous + Arrow Function and store the results in `results2`.
+const results2 = map(words, function nonAnonymousArrowFunction (word) { return word[0]; });
+assertArraysEqual(results2, ["g", "c", "t", "m", "t"]);
+
+
+// Test 3: Call `map` with an Anonymous + Regular Function and store the results in `results3`.
+const results3 = map(words, function(word) {
+  return word[0]
+});
+assertArraysEqual(results3, ["g", "c", "t", "m", "t"]); 
+
+
+// Test 4: Call `map` with an Anonymous + Arrow Function and store the results in `results4`. 
+const results4 = map(words, word => word[0]);
+assertArraysEqual(results4, ["g", "c", "t", "m", "t"]); 
