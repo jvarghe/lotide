@@ -37,8 +37,39 @@ const assertEqual = function(actual, expected) {
 // object and return the first key for which the callback returns a truthy 
 // value. If no key is found, then it should return `undefined`.
 const findKey = function(objectToScan, callBack) {
+  
+  // Create an variable to hold the first found key value:
+  let keyName = undefined;
 
+  // Iterate over the object...
+  for (const key in objectToScan) {
+    
+    // ... and call the predicate function and pass in the element value. If
+    // the callback returns a truthy value...
+    if (callBack(objectToScan[key]) === true) {
+
+      // ...record the key and stop iteration by breaking out of the loop.
+      keyName = key;
+      break;
+    }
+
+  }
+
+  return keyName;
 };
 
 
+
 // TEST CASES
+// Test Case 1: 
+const object1 = {
+  "Blue Hill": { stars: 1 },
+  "Akaleri":   { stars: 3 },
+  "noma":      { stars: 2 },
+  "elBulli":   { stars: 3 },
+  "Ora":       { stars: 2 },
+  "Akelarre":  { stars: 3 }
+};
+const predicate1 = x => x.stars === 2;
+
+assertEqual(findKey(object1, predicate1), "noma");
