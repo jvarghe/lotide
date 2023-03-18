@@ -1,6 +1,4 @@
-// assertEqual Implementation
-
-// Function Implementation
+// ASSERTEQUAL IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -10,10 +8,5 @@ const assertEqual = function(actual, expected) {
 };
 
 
-// Test Code
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual("lighthouselabs", "lighthouselabs");
-assertEqual("lighthouse labs", "lighthouselabs");
-assertEqual(1234, 1234);
-assertEqual(1243, 1234);
+// EXPORTS
+module.exports = assertEqual;
