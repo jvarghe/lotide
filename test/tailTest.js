@@ -1,4 +1,4 @@
-// IMPORTS
+// IMPORTS FOR TESTS
 const tail = require("../tail.js");
 const assertEqual = require("../assertEqual.js");
 

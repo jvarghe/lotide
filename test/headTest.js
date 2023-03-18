@@ -1,4 +1,4 @@
-// IMPORT ASSERTEQUAL FUNCTION TO DO TESTS
+// IMPORTS FOR TESTS
 const assertEqual = require("../assertEqual.js");
 const head = require("../head.js");
 
