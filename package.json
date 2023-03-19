@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@jvarghe/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a mini-clone of `Lodash`. This is learning project; it is NOT intended for production use!!!",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/jvarghe/lotide.git"
   },
-  "author": "",
+  "author": "jvarghe",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jvarghe/lotide/issues"
