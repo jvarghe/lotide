@@ -29,11 +29,25 @@ const middle = require("./middle.js");
 
 
 // EXPORTS
+// 
+// Object exported in standard export format: 
+// 
+// module.exports = {
+//   assertArraysEqual: assertArraysEqual,
+//   assertEqual: assertEqual,
+//   eqArrays: eqArrays,
+//   head:   head,
+//   tail:   tail,
+//   middle: middle
+// };
+
+
+// Object exported with ES6 Property Value Shorthand syntax:
 module.exports = {
-  assertArraysEqual: assertArraysEqual,
-  assertEqual: assertEqual,
-  eqArrays: eqArrays,
-  head:   head,
-  tail:   tail,
-  middle: middle
+  assertArraysEqual,
+  assertEqual,
+  eqArrays,
+  head,
+  tail,
+  middle,
 };
