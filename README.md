@@ -1,12 +1,23 @@
 # Lotide
 
-A mini clone of the [Lodash](https://lodash.com) library.
+This is a mini-clone of the [Lodash](https://lodash.com) library. It specializes in utility functions that operate on arrays.
+
+For example, if you want the head, middle or tail elements of an array, Lotide offers functions that return these elements. 
+
+Please see the `Documentation` section for more about the available functions and how to use them.
+
+
+## License
+
+This library is released under the Affero GNU GPL License v3.0 or later versions (AGPL v3.0).
+
 
 ## Purpose
 
 **_BEWARE:_ This library was published for learning purposes. It is _not_ intended for use in production-grade software.**
 
-This project was created and published by me as part of my learnings at Lighthouse Labs. 
+This project was created and published by me as part of my studies at Lighthouse Labs. 
+
 
 ## Usage
 
@@ -14,19 +25,27 @@ This project was created and published by me as part of my learnings at Lighthou
 
 `npm install @jvarghe/lotide`
 
+For most README files, this is usually considered the last part. It lets other developers know what they can and cannot do with your project.
+
+We have different types of licenses depending on the kind of project you are working on. Depending on the one you will choose it will determine the contributions your project gets.
+
+The most common one is the GPL License which allows other to make modification to your code and use it for commercial purposes. If you need help choosing a license, use check out this link: https://choosealicense.com/
+
+
 **Require it:**
 
 `const _ = require('@jvarghe/lotide');`
 
 **Call it:**
 
-`const results = _.tail([1, 2, 3]) // => [2, 3]`
+`const results = _.tail([1, 2, 3])      // => [2, 3]`
+
 
 ## Documentation
 
 The following functions are currently implemented:
 
-* assertArraysEqual(): will take in two arrays to determine if two arrays are equal and print a message to the console.
+* assertArraysEqual(): will take in two arrays to determine if they are equal and prints a message to the console.
 
 * assertEqual(): will take in two arguments and determine if they are equal. 
 
@@ -42,22 +61,22 @@ The following functions are currently implemented:
 
 * findKey(): takes an object and a callback function. It will scan the object and return the first key for which the callback returns a truthy value. If no key is found, then it should return `undefined`.
 
-* findKeyByValue(): takes in an object and a value. It will search the object's keys' for this value. If finds a value, it simply returns the name of the first key where it finds this value. If it does not, it returns `undefined`.
+* findKeyByValue(): takes in an object and a value. It will search the object's keys' for this value. If it finds a value, it simply returns the name of the first key where it finds this value. If it does not, it returns `undefined`.
 
-* flatten(): takes an array that hold nested array up to one-level deep. It flattens nested arrays by moving elements up into the top array. This function will return the flattened array.
+* flatten(): takes an array that hold nested array up to one-level deep. It flattens nested arrays by moving elements up into the top array. The function will return the flattened array.
 
 * head(): takes an array and returns its first element.
 
-* index.js: This file is not intended for direct use. It merely imports all the utility functions and exports them as keys in a single object. This makes it easy to import the entire set of utility functions into other files in the project.
+* index.js: This file is not intended for direct use. It merely imports all the functions and exports them as keys in a single object. This makes it easy to import the entire set of functions into other projects.
 
 * letterPositions(): takes a sentence string. It will return an object with keys that appear in the sentence. The values will be the indices in the string where the character was found. As each letter may appear more than once, the values will be arrays of indices.
 
-* map(): takes an array (of strings) and a callback function. The callback function is executed on the array. The results are pushed on to an array which map() then returns.
+* map(): takes an array (of strings) and a callback function. The callback function is executed on the array. The results are pushed on to a new array which map() then returns.
 
-* middle(): takes an array, calculates the middle element(s) and returns an array containing them.
+* middle(): takes an array, calculates the middle element(s) and returns an array with them.
 
 * tail(): takes an array and returns the "tail" (all elements except the head or first one). It then returns this shrunken array.
 
-* takeUntil(): takes an array and a callback function. It will iterate over the array, applying the callback until the predicate (aka callback function) returns a "truthy" value. As it iterates over the array, it will push all "falsy" values onto an array, which it will return. This array contains all the values the predate the first "truthy" value.
+* takeUntil(): takes an array and a callback function. It will iterate over the array, applying the callback until the predicate (aka callback function) returns a "truthy" value. As it iterates over the array, it will push all "falsy" values onto an array, which it will return. This array contains all the values that predate the first "truthy" value.
 
 * without(): takes two array arguments, `source` and `itemsToRemove`. It iterates over the `source` array, stripping out all the unwanted items listed in `itemsToRemove`. It then returns the new, shrunken array.
