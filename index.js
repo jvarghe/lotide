@@ -33,12 +33,14 @@ const middle = require("./middle.js");
 // ARRAY ELEMENT COUNTERS:
 const countLetters = require("./countLetters.js");
 const countOnly = require("./countOnly.js");
+const letterPositions = require("./letterPositions.js");
 
 // ARRAY ELEMENT FINDERS (BY KEY):
 const findKey = require("./findKey.js");
 const findKeyByValue = require("./findKeyByValue.js");
 
 const flatten = require("./flatten.js");
+
 
 
 // EXPORTS
@@ -55,6 +57,8 @@ const flatten = require("./flatten.js");
 // };
 
 
+// EXPORTS
+// 
 // Object exported with ES6 Property Value Shorthand syntax:
 module.exports = {
   assertArraysEqual,
@@ -68,6 +72,7 @@ module.exports = {
   findKeyByValue,
   flatten,
   head,
-  tail,
+  letterPositions,
   middle,
+  tail,
 };
