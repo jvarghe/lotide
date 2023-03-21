@@ -27,15 +27,14 @@
 
 // IMPORTS
 const assertArraysEqual = require("./assertArraysEqual.js");
-const eqArrays = require("./eqArrays.js");
 
 
 
 // TAKEUNTIL IMPLEMENTATION
-// 
+//
 // This function takes an array and a callback function. It will iterate over
 // the array, applying the callback until the predicate (aka callback function)
-// returns a truthy value. Then it will return an array containing all the 
+// returns a truthy value. Then it will return an array containing all the
 // (falsy) values retrieved until the predicate terminated the process.
 const takeUntil = function(array, callback) {
   
