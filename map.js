@@ -58,6 +58,9 @@ const words = ["ground", "control", "to", "major", "tom"];
 
 
 // Test 1: Call `map` with a Non-Anonymous + Regular Function and store the results in `results1`.
+// NOTE: ESLint throws an error for giving this function a name, but I'm 
+// disregarding it to highlight the ability to pass Non-Anonymous callback 
+// functions into other functions.
 const results1 = map(words, function nonAnonymousRegularFunction(word) {
   return word[0];
 });
@@ -65,6 +68,9 @@ assertArraysEqual(results1, ["g", "c", "t", "m", "t"]);
 
 
 // Test 2: Call `map` with a Non-Anonymous + Arrow Function and store the results in `results2`.
+// NOTE: ESLint throws an error for giving this function a name, but I'm 
+// disregarding it to highlight the ability to pass Non-Anonymous callback 
+// functions into other functions.
 const results2 = map(words, function nonAnonymousArrowFunction(word) {
   return word[0];
 });
