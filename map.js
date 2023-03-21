@@ -13,59 +13,16 @@
  */
 
 
-
-// ASSERTARRAYSEQUAL()
-const assertArraysEqual = function(array1, array2) {
-
-  // Call eqArrays() to determine if the arrays are equal.
-  let arraysEqualOrNot = eqArrays(array1, array2);
-
-  if (arraysEqualOrNot === true) {
-    console.log("✅✅✅ Assertion Passed: The two arrays are equal!");
-  } else {
-    console.log("🛑🛑🛑 Assertion Failed: The two arrays are NOT equal!");
-  }
-
-};
-
-
-
-// EQARRAYS()
-const eqArrays = function(array1, array2) {
-
-  let elementEquality = true;
-
-  // Check if the two arrays are of equal size, else return false.
-  if (array1.length !== array2.length) {
-    return false;
-  } else {
-    // If they are of the same size, compare elements to see if they're the
-    // same. Return false if this is not true.
-    for (let i = 0; i < array1.length; i++) {
-
-      // If element i of array1 is equal to element i of array2, return true.
-      // Otherwise, mark elementEquality as false.
-      if (array1[i] === array2[i]) {
-        elementEquality = true;
-      } else {
-        elementEquality = false;
-        break;
-      }
-    }
-
-
-    return elementEquality;
-  }
-
-};
+// IMPORTS
+const assertArraysEqual = require("./assertArraysEqual.js");
+const eqArrays = require("./eqArrays.js");
 
 
 
 // MAP IMPLEMENTATION
-// An array of strings:
-const words = ["ground", "control", "to", "major", "tom"];
-
-// Our implementation of `map`.
+// 
+// This function will take an array and a callback function. It will execute the
+// callback on every element of the array and return the result in a new array.
 const map = function(array, callback) {
 
   // An array to hold the results.
@@ -86,6 +43,11 @@ const map = function(array, callback) {
 
 
 // TEST CASES
+
+// An array of strings that will be fed into `map`:
+const words = ["ground", "control", "to", "major", "tom"];
+
+
 // Write test cases using at least three different ways of using `map`. There
 // are at least 4 ways of invoking `map`:
 //
@@ -119,3 +81,8 @@ assertArraysEqual(results3, ["g", "c", "t", "m", "t"]);
 // Test 4: Call `map` with an Anonymous + Arrow Function and store the results in `results4`.
 const results4 = map(words, word => word[0]);
 assertArraysEqual(results4, ["g", "c", "t", "m", "t"]);
+
+
+
+// EXPORTS
+module.exports = map;

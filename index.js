@@ -10,11 +10,12 @@
 // allows us skip multi-line imports in each file. We can just import the 
 // `index.js` file into every file that needs it with just a single line of 
 // code: 
-// `const _ = require("./index.js")`. 
+// `const index = require("./index.js")`. 
 // 
 // So long as we consolidate all the imports and exports into a single file, 
 // this saves us from having to do manually do lengthy imports in every file 
-// that needs these utility functions. 
+// that needs these functions. 
+
 
 
 // IMPORTS
@@ -40,6 +41,7 @@ const findKey = require("./findKey.js");
 const findKeyByValue = require("./findKeyByValue.js");
 
 const flatten = require("./flatten.js");
+const map = require("./map.js");
 
 
 
@@ -55,6 +57,7 @@ const flatten = require("./flatten.js");
 //   tail:   tail,
 //   middle: middle
 // };
+
 
 
 // EXPORTS
@@ -73,6 +76,7 @@ module.exports = {
   flatten,
   head,
   letterPositions,
+  map,
   middle,
   tail,
 };
