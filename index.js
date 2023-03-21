@@ -31,18 +31,20 @@ const head   = require("./head.js");
 const tail   = require("./tail.js");
 const middle = require("./middle.js");
 
+// ARRAY ELEMENT FINDERS (BY KEY):
+const findKey = require("./findKey.js");
+const findKeyByValue = require("./findKeyByValue.js");
+
 // ARRAY ELEMENT COUNTERS:
 const countLetters = require("./countLetters.js");
 const countOnly = require("./countOnly.js");
 const letterPositions = require("./letterPositions.js");
 
-// ARRAY ELEMENT FINDERS (BY KEY):
-const findKey = require("./findKey.js");
-const findKeyByValue = require("./findKeyByValue.js");
-
+// ASSORTED ARRAY-BASED OPERATIONS
 const flatten = require("./flatten.js");
 const map = require("./map.js");
 const takeUntil = require("./takeUntil.js");
+const without = require("./without.js");
 
 
 
@@ -80,5 +82,6 @@ module.exports = {
   map,
   middle,
   tail,
-  takeUntil
+  takeUntil,
+  without
 };
