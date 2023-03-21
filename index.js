@@ -32,6 +32,7 @@ const middle = require("./middle.js");
 
 const countLetters = require("./countLetters.js");
 const countOnly = require("./countOnly.js");
+const findKey = require("./findKey.js");
 
 
 // EXPORTS
@@ -57,6 +58,7 @@ module.exports = {
   countOnly,
   eqArrays,
   eqObjects,
+  findKey,
   head,
   tail,
   middle,

@@ -22,14 +22,8 @@
  */
 
 
-// ASSERTEQUAL() Function Implementation
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+// IMPORTS 
+const assertEqual = require("./assertEqual.js");
 
 
 // FINDKEY()
@@ -73,3 +67,7 @@ const object1 = {
 const predicate1 = x => x.stars === 2;
 
 assertEqual(findKey(object1, predicate1), "noma");
+
+
+// EXPORTS
+module.exports = findKey;
