@@ -7,7 +7,7 @@ const eqArrays = require("./eqArrays.js");
 
 
 // ASSERTARRAYSEQUAL IMPLEMENTATION
-// 
+//
 // This function calls eqArrays() to determine if two arrays are equal and
 // prints a message to screen.
 const assertArraysEqual = function(array1, array2) {
