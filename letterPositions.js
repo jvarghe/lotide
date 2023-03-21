@@ -14,12 +14,11 @@
 
 // IMPORTS
 const assertArraysEqual = require("./assertArraysEqual.js");
-const eqArrays = require("./eqArrays.js");
 
 
 
 // LETTERPOSITIONS IMPLEMENTATION
-// 
+//
 // This function takes a `sentence` string. It reads this string and it will
 // make a list of all the indices in the string where each character is found.
 // As each letter may appear more than once, you will need to return multiple
@@ -74,6 +73,7 @@ assertArraysEqual(letterPositions("hello").h, [0]);
 assertArraysEqual(letterPositions("hello").e, [1]);
 assertArraysEqual(letterPositions("hello").l, [2, 3]);
 assertArraysEqual(letterPositions("hello").o, [4]);
+
 
 
 // EXPORTS

@@ -6,12 +6,11 @@
 
 // IMPORTS
 const assertArraysEqual = require("./assertArraysEqual.js");
-const eqArrays = require("./eqArrays.js");
 
 
 
 // FLATTEN IMPLEMENTATION
-// 
+//
 // This function takes an array that hold nested array up to one-level deep.
 // It flattens nested arrays by moving elements up into the top array.
 let flatten = function(unflatArray) {
