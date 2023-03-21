@@ -8,6 +8,9 @@
  * and do NOT count spaces.
  */
 
+// IMPORTS
+const assertEqual = require("./assertEqual.js");
+
 
 // `countLetters()` takes a string (intended to be a sentence), and returns a
 // count of all the letters, and only the letters, in that string.
@@ -49,18 +52,10 @@ const countLetters = function(sentenceString) {
 };
 
 
-
-// ASSERTEQUAL() Function Implementation
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-
-
 // TEST CASES:
 let resultObject1 = countLetters("The greatest glory in living lies not in never falling, but in rising every time we fall.");
 console.log(resultObject1);
+
+
+// EXPORTS
+module.exports = countLetters;
