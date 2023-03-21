@@ -1,5 +1,5 @@
 // MANUAL TESTS
-// 
+//
 // // IMPORTS FOR TESTS
 // const tail = require("../tail.js");
 // const assertEqual = require("../assertEqual.js");
@@ -31,7 +31,7 @@ describe("#tail", () => {
 
   // Tests the return of an empty array.
   it("This test should return `[]`", () => {
-    assert.deepEqual(tail([]), []);  
+    assert.deepEqual(tail([]), []);
   });
 
   // Tests the return of an array with only one element.

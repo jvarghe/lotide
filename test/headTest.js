@@ -1,5 +1,5 @@
 // MANUAL TESTS
-// 
+//
 // // IMPORTS FOR TESTS
 // const assertEqual = require("../assertEqual.js");
 // const head = require("../head.js");
@@ -22,7 +22,7 @@ const assert = require("chai").assert;
 const head = require("../head.js");
 
 
-// Uses Mocha to define test frameworks using `describe` and `it` functions. 
+// Uses Mocha to define test frameworks using `describe` and `it` functions.
 // Uses `Chai's` assertion functions to describe the exact test we want to run.
 describe("#head", () => {
 
@@ -31,10 +31,10 @@ describe("#head", () => {
     assert.strictEqual(head([1, 2, 3]), 1);
   });
 
-  // This test should return `5` to check whether head correctly returns the 
-  // only element in a single-element array. 
+  // This test should return `5` to check whether head correctly returns the
+  // only element in a single-element array.
   it("This test should return `5` for [\"5\"]", () => {
-    assert.strictEqual(head(["5"]), "5"); 
+    assert.strictEqual(head(["5"]), "5");
   });
   
 });

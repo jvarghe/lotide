@@ -1,5 +1,5 @@
 // MANUAL TESTS
-// 
+//
 // // IMPORTS FOR TESTS
 // const middle = require("../middle.js");
 // const assertArraysEqual = require("../assertArraysEqual.js");
