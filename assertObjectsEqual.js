@@ -21,7 +21,7 @@ const assertObjectsEqual = function(object1, object2) {
   const inspect = require('util').inspect;
 
   // Call eqObjects() to determine if the objects are equal.
-  let objectsEqualOrNot = eqObjects(object1, object2);
+  const objectsEqualOrNot = eqObjects(object1, object2);
   
   // Check the status of `eqObjects`:
   if (objectsEqualOrNot === true) {

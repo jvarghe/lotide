@@ -13,7 +13,7 @@ const eqArrays = require("./eqArrays.js");
 // This function takes two array arguments for parameters `source` and
 // `itemsToRemove`. It returns a new array, having stripped all unwanted items
 // from the source array.
-let without = function(source, itemsToRemove) {
+const without = function(source, itemsToRemove) {
 
   // Create new array to store only those elements from source that are not
   // present in the itemsToRemove array.
@@ -69,18 +69,18 @@ let without = function(source, itemsToRemove) {
 
 
 // TEST CASES
-let result1 = without([1, 2, 3], [1]);                 // => [2, 3]
+const result1 = without([1, 2, 3], [1]);                 // => [2, 3]
 assertArraysEqual(result1, [2, 3]);
 
-let result2 = without(["1", "2", "3"], [1, 2, "3"]);   // => ["1", "2"]
+const result2 = without(["1", "2", "3"], [1, 2, "3"]);   // => ["1", "2"]
 assertArraysEqual(result2, ["1", "2"]);
 
 // Test if the without() can handle `source` and `itemsToRemove` being identical.
-let result3 = without([15, 15, 15], [15, 15, 15]);     // => []
+const result3 = without([15, 15, 15], [15, 15, 15]);     // => []
 assertArraysEqual(result3, []);
 
 // Test strings with similar, but not identical casing.
-let result4 = without(["lighthouselabs", "rocks!"],
+const result4 = without(["lighthouselabs", "rocks!"],
   ["Lighthouselabs", "rocks!"]);   // => lighthouselabs
 assertArraysEqual(result4, ["lighthouselabs"]);
 

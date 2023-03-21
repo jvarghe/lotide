@@ -6,7 +6,7 @@
 //
 // This function takes an array, calculates the middle element(s) and returns
 // an array containing them.
-let middle = function(array) {
+const middle = function(array) {
 
   // An empty array to hold the middle elements.
   let middleArray = [];
@@ -22,7 +22,7 @@ let middle = function(array) {
   } else if ((array.length > 2) && (array.length % 2 !== 0)) {
 
     // Calculate the middle element, round it down, and...
-    let middleElement = Math.floor((array.length / 2));
+    const middleElement = Math.floor((array.length / 2));
     // push this element onto `middleArray`.
     middleArray.push(array[middleElement]);
 
@@ -32,9 +32,9 @@ let middle = function(array) {
 
     // One middle element can be found by taking the average of the length of
     // the array...
-    let middleElement2 = (array.length / 2);
+   const middleElement2 = (array.length / 2);
     // ... the other can be found one index before it.
-    let middleElement1 = (middleElement2 - 1);
+    const middleElement1 = (middleElement2 - 1);
 
     // Push these elements into `middleArray`.
     middleArray.push(array[middleElement1], array[middleElement2]);

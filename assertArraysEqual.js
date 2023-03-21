@@ -13,7 +13,7 @@ const eqArrays = require("./eqArrays.js");
 const assertArraysEqual = function(array1, array2) {
 
   // Call eqArrays() to determine if the arrays are equal.
-  let arraysEqualOrNot = eqArrays(array1, array2);
+  const arraysEqualOrNot = eqArrays(array1, array2);
 
   if (arraysEqualOrNot === true) {
     console.log("✅✅✅ Assertion Passed: The two arrays are equal!");

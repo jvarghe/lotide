@@ -13,7 +13,7 @@ const assertArraysEqual = require("./assertArraysEqual.js");
 //
 // This function takes an array that hold nested array up to one-level deep.
 // It flattens nested arrays by moving elements up into the top array.
-let flatten = function(unflatArray) {
+const flatten = function(unflatArray) {
   
   // Create an empty array to hold the final product.
   let finalArray = [];

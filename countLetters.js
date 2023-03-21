@@ -53,7 +53,7 @@ const countLetters = function(sentenceString) {
 
 
 // TEST CASES:
-let resultObject1 = countLetters("The greatest glory in living lies not in never falling, but in rising every time we fall.");
+const resultObject1 = countLetters("The greatest glory in living lies not in never falling, but in rising every time we fall.");
 console.log(resultObject1);
 
 

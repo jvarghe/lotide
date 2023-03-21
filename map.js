@@ -29,7 +29,7 @@ const map = function(array, callback) {
   const results = [];
 
   // Iterate over the input array...
-  for (let item of array) {
+  for (const item of array) {
 
     // ... Call the callback function, perform this operation on each element,
     // and push each result on the `results` array.
