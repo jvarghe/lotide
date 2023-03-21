@@ -53,8 +53,8 @@ const eqObjects = function(object1, object2) {
     for (const key in object1) {
 
       // ... check if `object2` has a key listed in `object1`. If so, the two
-      // keys must be compared. But a key could be a primitive, an array or 
-      // an object (including functions). We will ignore most objects in this 
+      // keys must be compared. But a key could be a primitive, an array or
+      // an object (including functions). We will ignore most objects in this
       // project, but we must compare keys if they are primitives or arrays.
       if (Object.hasOwnProperty.call(object2, key)) {
         

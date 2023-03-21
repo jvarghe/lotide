@@ -9,7 +9,7 @@
  */
 
 // IMPORTS
-const assertEqual = require("./assertEqual.js");
+// const assertEqual = require("./assertEqual.js");
 
 
 // `countLetters()` takes a string (intended to be a sentence), and returns a
