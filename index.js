@@ -31,11 +31,12 @@ const tail   = require("./tail.js");
 const middle = require("./middle.js");
 
 const countLetters = require("./countLetters.js");
+const countOnly = require("./countOnly.js");
 
 
 // EXPORTS
 // 
-// Object exported in standard export format: 
+// Object exported in standard object format: 
 // 
 // module.exports = {
 //   assertArraysEqual: assertArraysEqual,
@@ -53,6 +54,7 @@ module.exports = {
   assertEqual,
   assertObjectsEqual,
   countLetters,
+  countOnly,
   eqArrays,
   eqObjects,
   head,
