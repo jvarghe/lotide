@@ -38,6 +38,8 @@ const countOnly = require("./countOnly.js");
 const findKey = require("./findKey.js");
 const findKeyByValue = require("./findKeyByValue.js");
 
+const flatten = require("./flatten.js");
+
 
 // EXPORTS
 // 
@@ -64,6 +66,7 @@ module.exports = {
   eqObjects,
   findKey,
   findKeyByValue,
+  flatten,
   head,
   tail,
   middle,
