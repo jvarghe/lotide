@@ -32,7 +32,7 @@ const middle = function(array) {
 
     // One middle element can be found by taking the average of the length of
     // the array...
-   const middleElement2 = (array.length / 2);
+    const middleElement2 = (array.length / 2);
     // ... the other can be found one index before it.
     const middleElement1 = (middleElement2 - 1);
 

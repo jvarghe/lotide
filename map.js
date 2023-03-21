@@ -57,11 +57,11 @@ const words = ["ground", "control", "to", "major", "tom"];
 //   4. Anonymous + Arrow Function
 
 
-// Test 1: Call `map` with a Non-Anonymous + Regular Function and store the 
+// Test 1: Call `map` with a Non-Anonymous + Regular Function and store the
 // results in `results1`.
-// 
-// NOTE: ESLint throws an error for giving this function a name, but I'm 
-// disregarding it to highlight the ability to pass Non-Anonymous callback 
+//
+// NOTE: ESLint throws an error for giving this function a name, but I'm
+// disregarding it to highlight the ability to pass Non-Anonymous callback
 // functions into other functions.
 const results1 = map(words, function nonAnonymousRegularFunction(word) {
   return word[0];
@@ -69,11 +69,11 @@ const results1 = map(words, function nonAnonymousRegularFunction(word) {
 assertArraysEqual(results1, ["g", "c", "t", "m", "t"]);
 
 
-// Test 2: Call `map` with a Non-Anonymous + Arrow Function and store the 
+// Test 2: Call `map` with a Non-Anonymous + Arrow Function and store the
 // results in `results2`.
-// 
-// NOTE: ESLint throws an error for giving this function a name, but I'm 
-// disregarding it to highlight the ability to pass Non-Anonymous callback 
+//
+// NOTE: ESLint throws an error for giving this function a name, but I'm
+// disregarding it to highlight the ability to pass Non-Anonymous callback
 // functions into other functions.
 const results2 = map(words, function nonAnonymousArrowFunction(word) {
   return word[0];
@@ -81,7 +81,7 @@ const results2 = map(words, function nonAnonymousArrowFunction(word) {
 assertArraysEqual(results2, ["g", "c", "t", "m", "t"]);
 
 
-// Test 3: Call `map` with an Anonymous + Regular Function and store the 
+// Test 3: Call `map` with an Anonymous + Regular Function and store the
 // results in `results3`.
 const results3 = map(words, function(word) {
   return word[0];
@@ -89,7 +89,7 @@ const results3 = map(words, function(word) {
 assertArraysEqual(results3, ["g", "c", "t", "m", "t"]);
 
 
-// Test 4: Call `map` with an Anonymous + Arrow Function and store the results 
+// Test 4: Call `map` with an Anonymous + Arrow Function and store the results
 // in `results4`.
 const results4 = map(words, word => word[0]);
 assertArraysEqual(results4, ["g", "c", "t", "m", "t"]);
