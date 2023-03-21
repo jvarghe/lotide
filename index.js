@@ -18,21 +18,25 @@
 
 
 // IMPORTS
-// REQUIRED HELPER FUNCTIONS
+// REQUIRED HELPER FUNCTIONS:
 const assertArraysEqual = require("./assertArraysEqual.js");
 const assertEqual = require("./assertEqual.js");
 const assertObjectsEqual = require("./assertObjectsEqual.js");
 const eqArrays = require("./eqArrays.js");
 const eqObjects = require("./eqObjects.js");
 
-// ARRAY ELEMENT FINDERS
+// ARRAY ELEMENT FINDERS:
 const head   = require("./head.js");
 const tail   = require("./tail.js");
 const middle = require("./middle.js");
 
+// ARRAY ELEMENT COUNTERS:
 const countLetters = require("./countLetters.js");
 const countOnly = require("./countOnly.js");
+
+// ARRAY ELEMENT FINDERS (BY KEY):
 const findKey = require("./findKey.js");
+const findKeyByValue = require("./findKeyByValue.js");
 
 
 // EXPORTS
@@ -59,6 +63,7 @@ module.exports = {
   eqArrays,
   eqObjects,
   findKey,
+  findKeyByValue,
   head,
   tail,
   middle,

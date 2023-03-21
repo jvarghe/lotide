@@ -11,17 +11,12 @@
  */
 
 
-
-// ASSERTEQUAL() Function Implementation
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+// IMPORTS
+const assertEqual = require("./assertEqual.js");
 
 
+// FINDKEYBYVALUE IMPLEMENTATION
+// 
 // This function takes in an object and a value. It will search the object's
 // keys' values for this value. If finds a value, it simply returns the name
 // of the first key where it finds this value. If it does not, it returns
@@ -60,3 +55,7 @@ assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
 assertEqual(findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine"), "comedy");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
+
+
+// EXPORTS
+module.exports = findKeyByValue;
