@@ -20,6 +20,7 @@
 // IMPORTS
 const assertArraysEqual = require("./assertArraysEqual.js");
 const assertEqual = require("./assertEqual.js");
+const assertObjectsEqual = require("./assertObjectsEqual.js");
 const eqArrays = require("./eqArrays.js");
 const eqObjects = require("./eqObjects.js");
 
@@ -47,6 +48,7 @@ const middle = require("./middle.js");
 module.exports = {
   assertArraysEqual,
   assertEqual,
+  assertObjectsEqual,
   eqArrays,
   eqObjects,
   head,
