@@ -3,7 +3,7 @@
 
 
 // MIDDLE IMPLEMENTATION
-// 
+//
 // This function takes an array, calculates the middle element(s) and returns
 // an array containing them.
 let middle = function(array) {

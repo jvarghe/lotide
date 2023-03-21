@@ -15,12 +15,12 @@
 
 // IMPORTS
 const assertArraysEqual = require("./assertArraysEqual.js");
-const eqArrays = require("./eqArrays.js");
+
 
 
 
 // MAP IMPLEMENTATION
-// 
+//
 // This function will take an array and a callback function. It will execute the
 // callback on every element of the array and return the result in a new array.
 const map = function(array, callback) {
