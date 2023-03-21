@@ -22,7 +22,7 @@
  */
 
 
-// IMPORTS 
+// IMPORTS
 const assertEqual = require("./assertEqual.js");
 
 

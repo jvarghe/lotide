@@ -4,9 +4,9 @@
  * value. It should scan the object and return the first key which contains
  * the given value. If no key with that given value is found, then it should
  * return `undefined`.
- * 
- * Tips: Consider using the `Object.keys()` function to help you easily search 
- * through all the object keys. Consider using `for...of` to loop over the keys 
+ *
+ * Tips: Consider using the `Object.keys()` function to help you easily search
+ * through all the object keys. Consider using `for...of` to loop over the keys
  * returned by `Object.keys()`.
  */
 
@@ -16,7 +16,7 @@ const assertEqual = require("./assertEqual.js");
 
 
 // FINDKEYBYVALUE IMPLEMENTATION
-// 
+//
 // This function takes in an object and a value. It will search the object's
 // keys' values for this value. If finds a value, it simply returns the name
 // of the first key where it finds this value. If it does not, it returns
@@ -45,7 +45,7 @@ const findKeyByValue = function(objectToScan, valueToScanFor) {
 
 // TEST CASES:
 const bestTVShowsByGenre = {
-  sci_fi: "The Expanse",
+  sciFi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
 };
@@ -54,7 +54,7 @@ const bestTVShowsByGenre = {
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
 assertEqual(findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine"), "comedy");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sciFi");
 
 
 // EXPORTS
