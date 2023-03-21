@@ -25,58 +25,18 @@
 
 
 
-// ASSERTARRAYSEQUAL()
-const assertArraysEqual = function(array1, array2) {
-
-  // Call eqArrays() to determine if the arrays are equal.
-  let arraysEqualOrNot = eqArrays(array1, array2);
-
-  if (arraysEqualOrNot === true) {
-    console.log("✅✅✅ Assertion Passed: The two arrays are equal!");
-  } else {
-    console.log("🛑🛑🛑 Assertion Failed: The two arrays are NOT equal!");
-  }
-
-};
+// IMPORTS
+const assertArraysEqual = require("./assertArraysEqual.js");
+const eqArrays = require("./eqArrays.js");
 
 
 
-// EQARRAYS()
-const eqArrays = function(array1, array2) {
-
-  let elementEquality = true;
-
-  // Check if the two arrays are of equal size, else return false.
-  if (array1.length !== array2.length) {
-    return false;
-  } else {
-    // If they are of the same size, compare elements to see if they're the
-    // same. Return false if this is not true.
-    for (let i = 0; i < array1.length; i++) {
-
-      // If element i of array1 is equal to element i of array2, return true.
-      // Otherwise, mark elementEquality as false.
-      if (array1[i] === array2[i]) {
-        elementEquality = true;
-      } else {
-        elementEquality = false;
-        break;
-      }
-    }
-
-
-    return elementEquality;
-  }
-
-};
-
-
-
-// TAKEUNTIL()
+// TAKEUNTIL IMPLEMENTATION
+// 
 // This function takes an array and a callback function. It will iterate over
 // the array, applying the callback until the predicate (aka callback function)
-// returns a truthy value. Then it will return an array containing the values
-// all the values until the predicate terminates the process.
+// returns a truthy value. Then it will return an array containing all the 
+// (falsy) values retrieved until the predicate terminated the process.
 const takeUntil = function(array, callback) {
   
   // Create an array to hold results.
@@ -123,3 +83,8 @@ const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Re
 const results2 = takeUntil(data2, x => x === ',');
 console.log(results2);
 assertArraysEqual(results2, ["I've", "been", "to", "Hollywood"]);
+
+
+
+// EXPORTS
+module.exports = takeUntil;

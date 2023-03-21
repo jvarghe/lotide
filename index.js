@@ -42,6 +42,7 @@ const findKeyByValue = require("./findKeyByValue.js");
 
 const flatten = require("./flatten.js");
 const map = require("./map.js");
+const takeUntil = require("./takeUntil.js");
 
 
 
@@ -79,4 +80,5 @@ module.exports = {
   map,
   middle,
   tail,
+  takeUntil
 };
