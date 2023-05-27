@@ -24,6 +24,8 @@ const head = require("../head.js");
 
 // Uses Mocha to define test frameworks using `describe` and `it` functions.
 // Uses `Chai's` assertion functions to describe the exact test we want to run.
+//
+// This file tests `head.js` to check for bugs.
 describe("#head", () => {
 
   // This test checks to see if the first element `1` is returned:
@@ -33,8 +35,14 @@ describe("#head", () => {
 
   // This test should return `5` to check whether head correctly returns the
   // only element in a single-element array.
-  it("This test should return `5` for [\"5\"]", () => {
+  it("This test should return `5` for [\"5\"] (Single-Element Array).", () => {
     assert.strictEqual(head(["5"]), "5");
   });
   
+  // This test should return `undefined` to check whether head correctly fails
+  // to return anything from an empty array.
+  it("This test should return `undefined` for []", () => {
+    assert.strictEqual(head([]), undefined);
+  });
+
 });
