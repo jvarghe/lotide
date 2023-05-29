@@ -1,7 +1,15 @@
-// CHALLENGE: Create a function flatten() which will take in an array containing
-// elements including nested arrays of elements, and return a "flattened"
-// version of the array.
-
+/* CHALLENGE
+ *
+ * Create a function `flatten()` which will take in an array containing elements
+ * including nested arrays of elements, and return a "flattened" version of the
+ * array.
+ *
+ * This means that `flatten()` will search an array for sub-arrays, up to one
+ * level deep. If it finds any, it will move the contents of the sub-arrays into
+ * the main array. It will return a flattened array, without any sub-arrays.
+ * All the sub-array elements will have been elevated to the main array, in the
+ * sequence they were found.
+ */
 
 
 // IMPORTS
@@ -11,7 +19,7 @@ const assertArraysEqual = require("./assertArraysEqual.js");
 
 // FLATTEN IMPLEMENTATION
 //
-// This function takes an array that hold nested array up to one-level deep.
+// This function takes an array that holds nested array up to one-level deep.
 // It flattens nested arrays by moving elements up into the top array.
 const flatten = function(unflatArray) {
   
@@ -44,12 +52,13 @@ const flatten = function(unflatArray) {
 
 
 // TEST CASES
-const unflattenedArray1 = flatten([1, 2, [3, 4], 5, [6]]); // => [1, 2, 3, 4, 5, 6]
+const unflattenedArray1 = flatten([1, 2, [3, 4], 5, [6]]);
 assertArraysEqual(unflattenedArray1, [1, 2, 3, 4, 5, 6]);
+// Expected Return: [1, 2, 3, 4, 5, 6]
 
 const unflattenedArray2 = flatten([["Jack", "and", "Jill"], "went", "up", ["the"], "hill"]);
 assertArraysEqual(unflattenedArray2, ["Jack", "and", "Jill", "went", "up", "the", "hill"]);
-
+// Expected Return: ["Jack", "and", "Jill", "went", "up", "the", "hill"]
 
 // EXPORTS
 module.exports = flatten;
