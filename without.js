@@ -1,6 +1,11 @@
-// CHALLENGE: Implement without() which will return a subset of a given array,
-// removing unwanted elements.
-
+/* CHALLENGE
+ *
+ * Often times we need to filter our data by removing some unwanted items, so
+ * that we can focus on the "good stuff" that we need.
+ *
+ * Implement `without()` which will return a subset of a given array, removing
+ * unwanted elements.
+ */
 
 
 // IMPORTS
@@ -27,6 +32,7 @@ const without = function(source, itemsToRemove) {
   // will make it into the `finalArray`. If the arrays are not equal...
   if (eqArrays(source, itemsToRemove) === true) {
     return finalArray;
+
   } else {
 
     // Iterate over the `source` array, one element at a time...
@@ -60,7 +66,7 @@ const without = function(source, itemsToRemove) {
       }
     }
   }
-  
+
 
   // After iterating over both arrays, the `finalArray` should be complete.
   return finalArray;
@@ -69,9 +75,12 @@ const without = function(source, itemsToRemove) {
 
 
 // TEST CASES
+
+// Test a simple set of numbers.
 const result1 = without([1, 2, 3], [1]);                 // => [2, 3]
 assertArraysEqual(result1, [2, 3]);
 
+// Test a mixed sets of numbers and strings.
 const result2 = without(["1", "2", "3"], [1, 2, "3"]);   // => ["1", "2"]
 assertArraysEqual(result2, ["1", "2"]);
 
@@ -81,7 +90,7 @@ assertArraysEqual(result3, []);
 
 // Test strings with similar, but not identical casing.
 const result4 = without(["lighthouselabs", "rocks!"],
-  ["Lighthouselabs", "rocks!"]);   // => lighthouselabs
+  ["Lighthouselabs", "rocks!"]);                         // => lighthouselabs
 assertArraysEqual(result4, ["lighthouselabs"]);
 
 
