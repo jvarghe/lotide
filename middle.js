@@ -1,11 +1,15 @@
-// CHALLENGE: Implement middle() which will take in an array and return the
-// middle-most element(s) of the given array.
+/* CHALLENGE
+ *
+ * Implement `middle()` which will take in an array and return its middle
+ * element(s).
+ */
 
 
 // MIDDLE IMPLEMENTATION
 //
 // This function takes an array, calculates the middle element(s) and returns
-// an array containing them.
+// an array containing them. In arrays with an odd number of elements, it will
+// return one element; two for elements with an even number of elements.
 const middle = function(array) {
 
   // An empty array to hold the middle elements.
@@ -23,7 +27,7 @@ const middle = function(array) {
 
     // Calculate the middle element, round it down, and...
     const middleElement = Math.floor((array.length / 2));
-    // push this element onto `middleArray`.
+    // ...push this element onto `middleArray`.
     middleArray.push(array[middleElement]);
 
   // If an array size is greater than 2 and has an even number of elements, find
@@ -33,7 +37,7 @@ const middle = function(array) {
     // One middle element can be found by taking the average of the length of
     // the array...
     const middleElement2 = (array.length / 2);
-    // ... the other can be found one index before it.
+    // ... and the other can be found one index before it.
     const middleElement1 = (middleElement2 - 1);
 
     // Push these elements into `middleArray`.
