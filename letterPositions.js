@@ -86,12 +86,12 @@ const letterPositions = function(sentence) {
   }
 
   const finalObject = objectKeySorter(resultObject);
-  // console.log(finalObject);
+  console.log(finalObject);
   return finalObject;
 };
 
 
-
+// NOTE: Cannot find way to import `objectKeySorter()` from `countLetters.js`.
 // This function sorts all properties in an object into alphabetical order.
 const objectKeySorter = function(sentenceCountObject) {
 
