@@ -38,9 +38,9 @@ const assertEqual = require("./assertEqual.js");
 
 
 
-// COUNTONLY() FUNCTION:
+// COUNTONLY() FUNCTION
 // `countOnly()` will take an array and an object. `allItems` will contain a
-// list of items to search through. itemsToCount is an object specifying whic
+// list of items to search through. itemsToCount is an object specifying which
 // items we need to count. `countOnly()` will search for all the strings found
 // in the array and return an object containing counts of all the strings with
 // a truthy value.
@@ -79,7 +79,7 @@ const countOnly = function(allItems, itemsToCount) {
 
 
 
-// DRIVER CODE:
+// DRIVER CODE
 
 // An array containing first names.
 const firstNames = [
