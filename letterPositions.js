@@ -26,13 +26,15 @@
  *        * If so, increment it's value by 1.
  *        * If not, add character and give it a value of 1. 
  * 
+ *  * Sort the final object's keys, so that the properties appear in
+ *    alphabetical order.
  */
 
 
 
 // IMPORTS
 const assertArraysEqual = require("./assertArraysEqual.js");
-
+const objectKeySorter = require("./countLetters.js");
 
 
 // LETTERPOSITIONS() IMPLEMENTATION
@@ -82,8 +84,10 @@ const letterPositions = function(sentence) {
 
   }
 
-  console.log(resultObject);
-  return resultObject;
+  const finalObject = objectKeySorter(resultObject);
+
+  console.log(finalObject);
+  return finalObject;
 };
 
 
