@@ -1,4 +1,4 @@
-/* CHALLENGE:
+/* CHALLENGE
  *
  * Now let's create our own version of `Array.prototype.map()` in order to get
  * some practice building our own higher-order functions.
@@ -34,7 +34,7 @@ const map = function(array, callback) {
     // and push each result on the `results` array.
     results.push(callback(item));
   }
-  
+
 
   return results;
 };
@@ -50,49 +50,46 @@ const words = ["ground", "control", "to", "major", "tom"];
 // Write test cases using at least three different ways of using `map`. There
 // are at least 4 ways of invoking `map`:
 //
-//   1. Non-Anonymous + Regular Function
-//   2. Non-Anonymous + Arrow Function
-//   3. Anonymous + Regular Function
-//   4. Anonymous + Arrow Function
+//   1. Standalone Callback Passed Into HOF Via Function Name
+//   2. Inline Anonymous Function Defined Within HOF Function Call
+//      (Function Declaration Syntax)
+//   3. Inline Anonymous Function Defined Within HOF Function Call
+//      (Arrow Function, Block Body Syntax)
+//   4. Inline Anonymous Function Defined Within HOF Function Call
+//      (Arrow Function, Concise Body Syntax)
 
 
-// Test 1: Call `map` with a Non-Anonymous + Regular Function and store the
-// results in `results1`.
-//
-// NOTE: ESLint throws an error for giving this function a name, but I'm
-// disregarding it to highlight the ability to pass Non-Anonymous callback
-// functions into other functions.
-const results1 = map(words, function nonAnonymousRegularFunction(word) {
+// METHOD 1 : Define a standalone anonymous function and...
+// This callback function returns the first character in each string.
+const filterCB = function(word) {
   return word[0];
-});
+};
+
+// ...pass it into `map()` with its function name.
+const results1 = map(words, filterCB);
 assertArraysEqual(results1, ["g", "c", "t", "m", "t"]);
 
 
-// Test 2: Call `map` with a Non-Anonymous + Arrow Function and store the
-// results in `results2`.
-//
-// NOTE: ESLint throws an error for giving this function a name, but I'm
-// disregarding it to highlight the ability to pass Non-Anonymous callback
-// functions into other functions.
-const results2 = map(words, function nonAnonymousArrowFunction(word) {
+// METHOD 2: Define an Inline Anonymous Function Within the `map()` Function
+// Call (Function Declaration Syntax):
+const results2 = map(words, function(word) {
   return word[0];
 });
 assertArraysEqual(results2, ["g", "c", "t", "m", "t"]);
 
 
-// Test 3: Call `map` with an Anonymous + Regular Function and store the
-// results in `results3`.
-const results3 = map(words, function(word) {
+// METHOD 3: Call `map()` and Pass in an Inline Anonymous Function
+// (Arrow Function, Block Body Syntax)
+const results3 = map(words, (word) => {
   return word[0];
 });
 assertArraysEqual(results3, ["g", "c", "t", "m", "t"]);
 
 
-// Test 4: Call `map` with an Anonymous + Arrow Function and store the results
-// in `results4`.
-const results4 = map(words, word => word[0]);
+// METHOD 4: Call `map()` and Pass in an Inline Anonymous Function
+// (Arrow Function, Concise Body Syntax)
+const results4 = map(words, (word) => word[0]);
 assertArraysEqual(results4, ["g", "c", "t", "m", "t"]);
-
 
 
 // EXPORTS
