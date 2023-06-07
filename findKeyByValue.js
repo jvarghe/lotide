@@ -1,4 +1,4 @@
-/* CHALLENGE:
+/* CHALLENGE
  *
  * Implement the function `findKeyByValue()` which takes in an object and a
  * value. It should scan the object and return the first key which contains
@@ -43,11 +43,11 @@ const findKeyByValue = function(objectToScan, valueToScanFor) {
 
 
 
-// TEST CASES:
+// TEST CASES
 const bestTVShowsByGenre = {
   sciFi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
+  drama: "The Wire"
 };
 
 
