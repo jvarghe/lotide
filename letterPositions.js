@@ -35,6 +35,35 @@
 // IMPORTS
 const assertArraysEqual = require("./assertArraysEqual.js");
 
+// Gary Jipp's Recommended Solution
+// GARY'S SOLUTION IS SO ELEGANT! WHY DOES MY SOLUTION LOOK LIKE CTHULU CAME UP
+// WITH IT?!?
+
+// This function takes a string, reads and the logs the indices of all the
+// characters.
+// const letterPositions = function(str) {
+//   const result = {};
+
+//   // Iterate over the string.
+//   for (const i in str) {
+
+//   // Select a letter from the string.
+//     const letter = str[i];
+
+//     // If the `letter` key does NOT exist in the `result` object...
+//     if (!result[letter]) {
+//
+//       // ...add the key as an empty property.
+//       result[letter] = [];
+//     }
+
+//     // Otherwise, push the index of the current letter into `result`.
+//     result[letter].push(Number(i));
+//   }
+
+//   return result;
+// };
+
 
 
 // LETTERPOSITIONS() IMPLEMENTATION
@@ -45,7 +74,7 @@ const assertArraysEqual = require("./assertArraysEqual.js");
 // numbers per character. This function will return object with arrays for
 // keys.
 const letterPositions = function(sentence) {
-  
+
   // Create an object to hold the final results.
   const resultObject = {};
 
@@ -54,10 +83,10 @@ const letterPositions = function(sentence) {
   const LCSentence = sentence.toLowerCase();
   // console.log(LCSentence);
 
-  
+
   // Iterate over the `LCSentence` string (Use `for` loop to track indices).
   for (let char = 0; char < LCSentence.length; char++) {
-  
+
     // If the current character is a space skip over it and move on to the next
     // element.
     if ((LCSentence[char] === " ")) {
