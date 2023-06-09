@@ -25,7 +25,84 @@ const assertEqual = require("./assertEqual.js");
 const eqArrays = require("./eqArrays.js");
 
 
-// EQOBJECTS() FUNCTION
+// EQOBJECTS() FUNCTION [Original, Non-Recursive Implementation]
+// This function takes two objects and compares all their keys to see if they
+// are equal. Based on the result, it returns a boolean value.
+// const eqObjects = function(object1, object2) {
+
+//   // Create `areObjectsEqual`. Don't set a value; the value will must be
+//   // determined by the results of comparison.
+//   let areObjectsEqual;
+
+
+//   // Compare the length of the objects, which will quickly tell us if the two
+//   // objects have the same number of keys. As objects don't have a .`length`
+//   // property, convert them into arrays. This will result in an array of their
+//   // keys being created. Compare the lengths of the two arrays:
+//   const object1Array = Object.keys(object1);
+//   const object2Array = Object.keys(object2);
+
+//   if (object1Array.length !== object2Array.length) {
+//     return areObjectsEqual = false;
+
+//   // If the objects have the same number of keys, move to the next step:
+//   // compare the values of the keys to see if they are the same
+//   } else {
+
+//     // Iterate over the keys in `object1`...
+//     for (const key in object1) {
+
+//       // ... check if `object2` has a key listed in `object1`. If so, the two
+//       // keys must be compared. But a key could be a primitive, an array or
+//       // an object (including functions). We will ignore most objects in this
+//       // project, but we must compare keys if they are primitives or arrays.
+//       if (Object.hasOwnProperty.call(object2, key)) {
+
+//         // CHECK 1: IF A KEY IS AN ARRAY
+//         // Check if `key` in `object1` is an array. If so...
+//         if (Array.isArray(object1[key]) === true) {
+
+//           // ...Call `eqArrays()` to check if the two arrays are equal.
+//           if (eqArrays(object1[key], object2[key]) === true) {
+
+//             // If they are equal, set `areObjectsEqual` to `true`, and move on
+//             // to the next key.
+//             areObjectsEqual = true;
+//             continue;
+
+//           // If the two arrays aren't equal, this means the two objects are
+//           // NOT equal. Set `areObjectsEqual` to `false`, return this value and
+//           // exit the function.
+//           } else {
+//             return areObjectsEqual = false;
+//           }
+//         }
+
+
+//         // CHECK 2: IF A KEY IS A PRIMITIVE
+//         // Check if the `key` property in `object1` has the same value as the
+//         // the `key` property in `object2`. If they do, set `areObjectsEqual`
+//         // to `true`, and move on to the next key.
+//         if (object1[key] === object2[key]) {
+//           areObjectsEqual = true;
+//           continue;
+
+//         // If the key values don't match, this means the two objects are
+//         // NOT equal. Set `areObjectsEqual` to `false`, return this value and
+//         // exit the function.
+//         } else {
+//           return areObjectsEqual = false;
+//         }
+//       }
+//     }
+//   }
+
+//   console.log(areObjectsEqual);
+//   return areObjectsEqual;
+// };
+
+
+// RECURSIVE IMPLEMENTATION
 // This function takes two objects and compares all their keys to see if they
 // are equal. Based on the result, it returns a boolean value.
 const eqObjects = function(object1, object2) {
@@ -45,59 +122,15 @@ const eqObjects = function(object1, object2) {
   if (object1Array.length !== object2Array.length) {
     return areObjectsEqual = false;
 
-  // If the objects have the same number of keys, move to the next step: compare
-  // the values of the keys to see if they are the same
+  // If the objects have the same number of keys, move to the next step:
+  // compare the values of the keys to see if they are the same.
   } else {
 
-    // Iterate over the keys in `object1`...
-    for (const key in object1) {
-
-      // ... check if `object2` has a key listed in `object1`. If so, the two
-      // keys must be compared. But a key could be a primitive, an array or
-      // an object (including functions). We will ignore most objects in this
-      // project, but we must compare keys if they are primitives or arrays.
-      if (Object.hasOwnProperty.call(object2, key)) {
-        
-        // CHECK 1: IF A KEY IS AN ARRAY
-        // Check if `key` in `object1` is an array. If so...
-        if (Array.isArray(object1[key]) === true) {
-
-          // ...Call `eqArrays()` to check if the two arrays are equal.
-          if (eqArrays(object1[key], object2[key]) === true) {
-
-            // If they are equal, set `areObjectsEqual` to `true`, and move on
-            // to the next key.
-            areObjectsEqual = true;
-            continue;
-
-          // If the two arrays aren't equal, this means the two objects are
-          // NOT equal. Set `areObjectsEqual` to `false`, return this value and
-          // exit the function.
-          } else {
-            return areObjectsEqual = false;
-          }
-        }
+    // CASE 1: PRIMITIVE TYPES
 
 
-        // CHECK 2: IF A KEY IS A PRIMITIVE
-        // Check if the `key` property in `object1` has the same value as the
-        // the `key` property in `object2`. If they do, set `areObjectsEqual`
-        // to `true`, and move on to the next key.
-        if (object1[key] === object2[key]) {
-          areObjectsEqual = true;
-          continue;
-
-        // If the key values don't match, this means the two objects are
-        // NOT equal. Set `areObjectsEqual` to `false`, return this value and
-        // exit the function.
-        } else {
-          return areObjectsEqual = false;
-        }
-      }
-    }
   }
 
-  console.log(areObjectsEqual);
   return areObjectsEqual;
 };
 
@@ -125,6 +158,13 @@ assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true
 const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 // Returns `False`.
 assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
+
+
+// Recursive Test Cases
+
+eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }) // => true
+eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }) // => false
+eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }) // => false
 
 
 // EXPORTS
