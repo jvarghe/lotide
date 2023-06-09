@@ -122,22 +122,92 @@ const eqObjects = function(object1, object2) {
   if (object1Array.length !== object2Array.length) {
     return areObjectsEqual = false;
 
-  // If the objects have the same number of keys, move to the next step:
-  // compare the values of the keys to see if they are the same.
+    // If the objects have the same number of keys, move to the next step:
+    // compare the values of the keys to see if they are the same.
   } else {
 
-    // CASE 1: PRIMITIVE TYPES
+    // Iterate over the keys in `object1`...
+    for (const key in object1) {
 
 
+      // CASE 1: IF THE ELEMENT IS A PRIMITIVE TYPE
+      // Checks if the current value is an object by passing it into the
+      // `Object` type to check.
+      if (object1[key] !== Object(object1[key])) {
+        areObjectsEqual = primitiveComparer(object1[key], object2[key]);
+
+        if (areObjectsEqual !== true) {
+          return areObjectsEqual;
+        }
+
+      } else {
+
+        // CASE 2: IF THE ELEMENT IS AN ARRAY
+        // Let exhaustive check: `if (Array.isArray(object1[key]) === true)`
+        if ((typeof object1[key] === "object") && (typeof object1[key] === "function") === true) {
+          areObjectsEqual = arrayComparer(object1[key], object2[key]);
+
+          if (areObjectsEqual !== true) {
+            return areObjectsEqual;
+          }
+        }
+
+
+        // CASE 3: IF THE ELEMENT IS AN OBJECT OTHER THAN AN ARRAY
+      }
+
+
+
+    }
   }
 
   return areObjectsEqual;
 };
 
 
+const primitiveComparer = function(element1, element2) {
+
+  let arePrimitivesEqual = null;
+
+  // Check if the `key` property in `object1` has the same value as the
+  // the `key` property in `object2`. If they do, set `arePrimitivesEqual`
+  // to `true`, and return this value.
+  if (element1 === element2) {
+    return arePrimitivesEqual = true;
+
+    // If the key values don't match, this means the two objects are
+    // NOT equal. Set `arePrimitivesEqual` to `false`, return this value and
+    // exit the function.
+  } else {
+    return arePrimitivesEqual = false;
+  }
+
+};
+
+
+const arrayComparer = function(array1, array2) {
+
+  let areArraysEqual = null;
+
+  // ...Call `eqArrays()` to check if the two arrays are equal.
+  if (eqArrays(array1, array2) === true) {
+
+    // If they are equal, set `areArraysEqual` to `true`, and return.
+    return areArraysEqual = true;
+
+    // If the two arrays aren't equal, this means the two objects are
+    // NOT equal. Set `areArraysEqual` to `false`, return this value and
+    // exit the function.
+  } else {
+    return areArraysEqual = false;
+  }
+};
+
+
+
 // TEST CASES
 // Compare two identical objects:
-const shirtObject = { color: "red", size: "medium"};
+const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
 // Returns `True`.
 assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
@@ -160,11 +230,12 @@ const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"
 assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
 
 
+
 // Recursive Test Cases
 
-eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }) // => true
-eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }) // => false
-eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }) // => false
+eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => true
+eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => false
+eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }); // => false
 
 
 // EXPORTS
