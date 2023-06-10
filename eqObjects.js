@@ -21,7 +21,6 @@
 
 
 // IMPORTS
-const assertEqual = require("./assertEqual.js");
 const eqArrays = require("./eqArrays.js");
 
 
@@ -269,49 +268,6 @@ const arrayComparer = function(array1, array2) {
   return areArraysEqual;
 };
 
-
-
-// TEST CASES
-
-// Tests for primitives and arrays:
-// Test 1: Compare two identical objects:
-const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject = { size: "medium", color: "red" };
-// Returns `True`.
-assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
-
-// Test 2: Compare two objects with different lengths
-// (Basically two different objects):
-const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-// Returns `False`.
-assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
-
-
-// Test 3: Compare objects with array keys:
-const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-// Returns `True`.
-assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
-
-// Test 4: Compare objects with array keys of different lengths
-// (Basically two different objects):
-const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
-// Returns `False`.
-assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
-
-
-// Recursive Test Cases
-// Test 5: Compare two identical, nested objects:
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
-// Returns `True`.
-
-// Test 6: Compare two dissimilar objects:
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
-// Returns `False`.
-
-// Test 7: Compare two dissimilar objects:
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
-// Returns `False`.
 
 
 // EXPORTS
