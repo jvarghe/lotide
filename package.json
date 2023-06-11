@@ -1,6 +1,6 @@
 {
   "name": "@jvarghe/lotide",
-  "version": "1.0.1",
+  "version": "1.0.2.1",
   "description": "This is a mini-clone of `Lodash`. It specializes in utility functions that operate on arrays.",
   "main": "index.js",
   "directories": {
