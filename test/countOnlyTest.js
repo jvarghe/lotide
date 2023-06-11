@@ -35,7 +35,6 @@ const countOnly = require("../countOnly.js");
 
 
 // This file tests `countOnly.js` to check for bugs.
-// Primitive Type Tests
 describe("#countOnly", () => {
 
   // This array will be used by all the tests. [Duplicate key `Salima` is used for testing.]
