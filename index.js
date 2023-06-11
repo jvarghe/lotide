@@ -10,7 +10,8 @@
 // allows us skip multi-line imports in each file. We can just import the
 // `index.js` file into every file that needs it with just a single line of
 // code:
-// `const index = require("./index.js")`.
+//
+//    const index = require("./index.js")
 //
 // So long as we consolidate all the imports and exports into a single file,
 // this saves us from having to do manually do lengthy imports in every file
@@ -27,8 +28,8 @@ const eqArrays = require("./eqArrays.js");
 const eqObjects = require("./eqObjects.js");
 
 // ARRAY ELEMENT FINDERS:
-const head   = require("./head.js");
-const tail   = require("./tail.js");
+const head = require("./head.js");
+const tail = require("./tail.js");
 const middle = require("./middle.js");
 
 // ARRAY ELEMENT FINDERS (BY KEY):
