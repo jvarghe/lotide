@@ -34,7 +34,7 @@
 
 
 // IMPORTS
-const assertEqual = require("./assertEqual.js");
+
 
 
 
@@ -45,7 +45,7 @@ const assertEqual = require("./assertEqual.js");
 // in the array and return an object containing counts of all the strings with
 // a truthy value.
 const countOnly = function(allItems, itemsToCount) {
-  
+
   // Create an object to hold the final results.
   const resultObject = {};
 
@@ -63,7 +63,7 @@ const countOnly = function(allItems, itemsToCount) {
       // If so, increment the key value by 1.
       if (Object.prototype.hasOwnProperty.call(resultObject, allItems[i]) === true) {
         resultObject[allItems[i]] += 1;
-      
+
       // If it doesn't exist, add the key and set its value equal to 1.
       } else {
         resultObject[allItems[i]] = 1;
@@ -77,33 +77,6 @@ const countOnly = function(allItems, itemsToCount) {
   return resultObject;
 };
 
-
-
-// DRIVER CODE
-
-// An array containing first names.
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
-
-
-// A the result of a call to countOnly(), passing in an object.
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
-
-
-// TEST CASES:
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
 
 
 // EXPORTS

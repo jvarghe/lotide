@@ -55,7 +55,7 @@ const eqObjects = require("../eqObjects.js");
 
 // This file tests `eqArrays.js` to check for bugs.
 // Primitive Type Tests
-describe("#eqArrays", () => {
+describe("#eqObjects", () => {
 
   it("Equality check for two identical objects should return TRUE.", () => {
     const shirtObject1 = { color: "red", size: "medium" };
