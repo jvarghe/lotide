@@ -112,7 +112,7 @@ const letterPositions = function(sentence) {
   }
 
   const finalObject = objectKeySorter(resultObject);
-  console.log(finalObject);
+  // console.log(finalObject);
   return finalObject;
 };
 
